@@ -94,6 +94,7 @@ func _build_graphics() -> void:
 	var p := _page("SETTINGS_GRAPHICS")
 	_options(p, "SETTINGS_QUALITY", ["QUALITY_LOW", "QUALITY_MEDIUM", "QUALITY_HIGH"], Settings.quality(),
 		func(i: int) -> void: Settings.set_value("graphics", "quality", i))
+	_slider(p, "SETTINGS_BRIGHTNESS", "graphics", "brightness", 0.7, 1.8, 0.05)
 	_slider(p, "SETTINGS_RENDER_SCALE", "graphics", "render_scale", 0.6, 1.0, 0.05)
 	_options(p, "SETTINGS_FPS", ["30", "60"], 0 if int(Settings.get_value("graphics", "fps_cap")) == 30 else 1,
 		func(i: int) -> void: Settings.set_value("graphics", "fps_cap", 30 if i == 0 else 60))

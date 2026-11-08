@@ -23,6 +23,13 @@ func setup(p_item: StringName, p_count: int) -> void:
 		_visual = ItemVisuals.build(data)
 		add_child(_visual)
 	_t = float(hash(item_id) % 100) * 0.1
+	# ~100 pickups per map: only animate the ones actually on screen
+	set_process(false)
+	var vis := VisibleOnScreenNotifier3D.new()
+	vis.aabb = AABB(Vector3(-0.4, 0.0, -0.4), Vector3(0.8, 0.6, 0.8))
+	vis.screen_entered.connect(set_process.bind(true))
+	vis.screen_exited.connect(set_process.bind(false))
+	add_child(vis)
 
 
 func get_prompt(_player: Node) -> String:

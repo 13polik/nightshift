@@ -991,5 +991,6 @@
 	"ROOM_FINAL_SHIFT_COLD_STORE": "Specimen Cold Store",
 	"ROOM_FINAL_SHIFT_STORES": "Stores",
 	"ROOM_FINAL_SHIFT_DIRECTOR": "Director's Office",
-	"ROOM_FINAL_SHIFT_SOUTH_EXTRA_1": "Workshop"
+	"ROOM_FINAL_SHIFT_SOUTH_EXTRA_1": "Workshop",
+	"SETTINGS_BRIGHTNESS": "Brightness"
 }

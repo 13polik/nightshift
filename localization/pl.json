@@ -991,5 +991,6 @@
 	"ROOM_FINAL_SHIFT_COLD_STORE": "Chłodnia okazów",
 	"ROOM_FINAL_SHIFT_STORES": "Magazyn",
 	"ROOM_FINAL_SHIFT_DIRECTOR": "Gabinet dyrektora",
-	"ROOM_FINAL_SHIFT_SOUTH_EXTRA_1": "Warsztat"
+	"ROOM_FINAL_SHIFT_SOUTH_EXTRA_1": "Warsztat",
+	"SETTINGS_BRIGHTNESS": "Jasność"
 }

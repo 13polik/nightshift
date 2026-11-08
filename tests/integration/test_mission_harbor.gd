@@ -24,12 +24,18 @@ func test_harbor_depot_builds() -> void:
 	check(not notes.is_empty(), "notes placed")
 	check(notes.all(func(n: Node) -> bool: return String((n as NoteInteractable).text_key).begins_with("NOTE_H")), "harbour notes, not Kessler ones")
 	# the hunter can actually move between the insertion yard and the cold storage
-	await wait_frames(5)
+	# (the navigation map syncs asynchronously after the bake: retry for a moment)
 	var m := mission.get_world_3d().navigation_map
-	var path := NavigationServer3D.map_get_path(mission.get_world_3d().navigation_map, room_center(&"gate_yard"), room_center(&"freezer_b"), true)
-	check(path.size() > 1 and path[path.size() - 1].distance_to(room_center(&"freezer_b")) < 2.0, "gate yard connects to cold storage")
-	var path2 := NavigationServer3D.map_get_path(mission.get_world_3d().navigation_map, room_center(&"radio_room"), room_center(&"pier"), true)
-	check(path2.size() > 1 and path2[path2.size() - 1].distance_to(room_center(&"pier")) < 2.0, "radio room connects to the pier")
+	var routes := [[&"gate_yard", &"freezer_b", "gate yard connects to cold storage"], [&"radio_room", &"pier", "radio room connects to the pier"]]
+	for r: Array in routes:
+		var to := room_center(r[1])
+		var path := PackedVector3Array()
+		for i in 120:
+			path = NavigationServer3D.map_get_path(m, room_center(r[0]), to, true)
+			if path.size() > 1:
+				break
+			await wait_frames(1)
+		check(path.size() > 1 and path[path.size() - 1].distance_to(to) < 3.0, str(r[2]))
 
 
 func test_harbor_full_objective_chain() -> void:

@@ -22,6 +22,9 @@ func _ready() -> void:
 
 
 func set_content(p_item: ItemData, p_count: int, p_selected: bool, p_progress: float) -> void:
+	# called every frame by the HUD: redraw only when something visible changed
+	if p_item == item and p_count == count and p_selected == selected and is_equal_approx(p_progress, use_progress):
+		return
 	item = p_item
 	count = p_count
 	selected = p_selected

@@ -46,11 +46,42 @@ func setup(p_mission: Node) -> void:
 	_moon.sky_mode = DirectionalLight3D.SKY_MODE_LIGHT_ONLY
 	add_child(_moon)
 	Events.graphics_quality_changed.connect(_apply)
+	Events.settings_changed.connect(func(section: String) -> void:
+		if section == "graphics":
+			_apply_brightness())
 	_apply(Settings.quality())
 	_ambient_effects()
 
 
+## Player brightness (Settings > Graphics): raises exposure and, more strongly, the ambient
+## floor so dark corners stay readable on phone screens while lit areas don't blow out.
+func _apply_brightness() -> void:
+	var b := clampf(float(Settings.get_value("graphics", "brightness")), 0.7, 1.8)
+	env.tonemap_exposure = 1.15 * b
+	env.ambient_light_energy = 0.22 * b * b
+	if _moon:
+		_moon.light_energy = 0.35 * b
+	# gamma curve on the final image: lifts the near-black shadows (what actually hides the
+	# map on a phone screen) without blowing out lamps. 1.0 = neutral.
+	var gamma := 1.0 + (b - 1.0) * 1.3
+	if absf(gamma - 1.0) < 0.01:
+		env.adjustment_color_correction = null
+	else:
+		var g := Gradient.new()
+		g.offsets = PackedFloat32Array()
+		g.colors = PackedColorArray()
+		for i in 17:
+			var x := float(i) / 16.0
+			var y := pow(x, 1.0 / gamma)
+			g.add_point(x, Color(y, y, y))
+		var tex := GradientTexture1D.new()
+		tex.gradient = g
+		tex.width = 256
+		env.adjustment_color_correction = tex
+
+
 func _apply(_q: int) -> void:
+	_apply_brightness()
 	var p := Settings.preset()
 	env.glow_enabled = bool(p.glow)
 	env.fog_enabled = bool(p.fog)

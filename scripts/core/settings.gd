@@ -12,6 +12,7 @@ const DEFAULTS := {
 	"graphics": {
 		"quality": -1, # -1 = auto-detect on first launch
 		"render_scale": 1.0,
+		"brightness": 1.0, # 0.7..1.8, scales exposure and ambient light
 		"fps_cap": 60,
 		"show_fps": false,
 		"vsync": true,
@@ -80,9 +81,20 @@ func _ready() -> void:
 		data.graphics.quality = detect_quality()
 		Log.i("settings", "auto-detected graphics quality %s" % Quality.keys()[data.graphics.quality])
 		save()
+	# mobile performance defaults (v2): low-end phones get a steady 30 fps instead of an
+	# uneven 40-60 that also overheats them. Applied once, also to existing installs.
+	if is_mobile() and int(data.graphics.get("mobile_perf_v", 0)) < 2:
+		data.graphics.mobile_perf_v = 2
+		if quality() == Quality.LOW:
+			data.graphics.fps_cap = 30
+		# phone screens in a dark room / outdoors need a brighter picture
+		data.graphics.brightness = maxf(float(data.graphics.get("brightness", 1.0)), 1.35)
+		save()
 	var forced := CmdArgs.value("quality").to_upper()
 	if forced in Quality.keys():
 		data.graphics.quality = Quality[forced]
+	if CmdArgs.has("brightness"): # QA: --ns-brightness=1.35 (not saved)
+		data.graphics.brightness = float(CmdArgs.value("brightness"))
 	apply_all.call_deferred()
 
 

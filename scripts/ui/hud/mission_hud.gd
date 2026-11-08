@@ -340,7 +340,7 @@ func _update_vitals(delta: float) -> void:
 	_battery_bar.value = _local.flashlight.battery / maxf(_local.flashlight.battery_max, 1.0)
 	var loud := NoiseSystem.movement_loudness(_local)
 	_noise_label.text = tr("HUD_NOISE_%s" % ("LOUD" if loud >= _local.stats.noise_sprint else ("QUIET" if loud <= _local.stats.noise_crouch else "NORMAL")))
-	_noise_label.add_theme_color_override("font_color", UiTheme.DANGER if loud >= _local.stats.noise_sprint else UiTheme.TEXT_DIM)
+	_set_font_color(_noise_label, UiTheme.DANGER if loud >= _local.stats.noise_sprint else UiTheme.TEXT_DIM)
 	_damage_flash = maxf(0.0, _damage_flash - delta * 1.5)
 	var low := clampf(1.0 - h.health / maxf(h.max_health, 1.0), 0.0, 1.0)
 	var downed := _local.is_downed()
@@ -357,11 +357,9 @@ func _update_vitals(delta: float) -> void:
 	if touch:
 		touch.visible = not spectating and not _pause_layer.visible
 		var b: Dictionary = touch.buttons
-		b[&"crouch"].toggled_on = _local.crouched
-		b[&"sprint"].toggled_on = _local.sprinting
-		b[&"flashlight"].toggled_on = _local.flashlight.on
-		for k in b:
-			b[k].queue_redraw()
+		_set_toggle(b[&"crouch"], _local.crouched)
+		_set_toggle(b[&"sprint"], _local.sprinting)
+		_set_toggle(b[&"flashlight"], _local.flashlight.on)
 
 
 func _update_prompt() -> void:
@@ -371,9 +369,13 @@ func _update_prompt() -> void:
 	var it := _local.interactor
 	_prompt.text = it.prompt_text()
 	var usable := it.can_use_focus()
-	_prompt.add_theme_color_override("font_color", UiTheme.TEXT if usable else UiTheme.TEXT_DIM)
+	_set_font_color(_prompt, UiTheme.TEXT if usable else UiTheme.TEXT_DIM)
 	if touch:
-		touch.buttons[&"interact"].dimmed = it.focus == null
+		var dim := it.focus == null
+		var ib: Control = touch.buttons[&"interact"]
+		if bool(ib.get("dimmed")) != dim:
+			ib.set("dimmed", dim)
+			ib.queue_redraw()
 
 
 func _update_inventory() -> void:
@@ -438,7 +440,7 @@ func _update_team() -> void:
 		if _chat_lines.has(p.peer_id):
 			chat = "\n  \"%s\"" % _chat_lines[p.peer_id].text
 		l.text = "%s%s  %s%s%s" % ["> " if p == _local else "", p.display_name(), st, dist, chat]
-		l.add_theme_color_override("font_color", col)
+		_set_font_color(l, col)
 
 
 func _update_status() -> void:
@@ -455,7 +457,7 @@ func _update_status() -> void:
 	if st.get_flag(&"alarm", false) and not st.get_flag(&"evac", false):
 		parts.append(tr("HUD_ALARM"))
 	_status.text = "  |  ".join(parts)
-	_status.add_theme_color_override("font_color", UiTheme.DANGER if st.get_flag(&"alarm", false) else UiTheme.ACCENT_2)
+	_set_font_color(_status, UiTheme.DANGER if st.get_flag(&"alarm", false) else UiTheme.ACCENT_2)
 
 
 func _update_markers(delta: float) -> void:
@@ -697,3 +699,17 @@ func close_pause() -> void:
 static func _fmt_time(sec: float) -> String:
 	var s := maxi(0, int(sec))
 	return "%d:%02d" % [s / 60, s % 60]
+
+
+## Theme overrides re-lay out the control, so only touch them when the value changes
+## (these labels are updated every frame).
+func _set_font_color(c: Control, col: Color) -> void:
+	if c.get_meta(&"_fc", Color(-1, -1, -1)) != col:
+		c.set_meta(&"_fc", col)
+		c.add_theme_color_override("font_color", col)
+
+
+func _set_toggle(btn: Control, on: bool) -> void:
+	if bool(btn.get("toggled_on")) != on:
+		btn.set("toggled_on", on)
+		btn.queue_redraw()
