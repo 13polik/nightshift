@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbvwxaqir6m0b"
-path.s3tc="res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.s3tc.ctex"
-path.etc2="res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.etc2.ctex"
+path.bptc="res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.bptc.ctex"
+path.astc="res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/plastic_white/plastic_white_orm.png"
-dest_files=["res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.s3tc.ctex", "res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.etc2.ctex"]
+dest_files=["res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.bptc.ctex", "res://.godot/imported/plastic_white_orm.png-d7d5e7b2e58f322ad1e5d1cbc7c53103.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

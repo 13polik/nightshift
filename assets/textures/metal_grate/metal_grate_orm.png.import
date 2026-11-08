@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crgngi5lmyldx"
-path.s3tc="res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.s3tc.ctex"
-path.etc2="res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.etc2.ctex"
+path.bptc="res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.bptc.ctex"
+path.astc="res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/metal_grate/metal_grate_orm.png"
-dest_files=["res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.s3tc.ctex", "res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.etc2.ctex"]
+dest_files=["res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.bptc.ctex", "res://.godot/imported/metal_grate_orm.png-ee4302504de5031c3c968d2c5619c968.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

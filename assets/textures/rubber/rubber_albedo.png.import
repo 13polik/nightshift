@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e1e43re6080n"
-path.s3tc="res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.s3tc.ctex"
-path.etc2="res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.etc2.ctex"
+path.bptc="res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.bptc.ctex"
+path.astc="res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/rubber/rubber_albedo.png"
-dest_files=["res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.s3tc.ctex", "res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.etc2.ctex"]
+dest_files=["res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.bptc.ctex", "res://.godot/imported/rubber_albedo.png-68f0329f52cdca0e8f39982b9d393f0e.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

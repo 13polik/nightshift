@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bah16mpl1n71r"
-path.s3tc="res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.s3tc.ctex"
-path.etc2="res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.etc2.ctex"
+path.bptc="res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.bptc.ctex"
+path.astc="res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/plastic_white/plastic_white_normal.png"
-dest_files=["res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.s3tc.ctex", "res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.etc2.ctex"]
+dest_files=["res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.bptc.ctex", "res://.godot/imported/plastic_white_normal.png-75833efe54e9180c02825ef51821d395.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

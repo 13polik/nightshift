@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwf44sv6l14e4"
-path.s3tc="res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.s3tc.ctex"
-path.etc2="res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.etc2.ctex"
+path.bptc="res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.bptc.ctex"
+path.astc="res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/wall_panel/wall_panel_albedo.png"
-dest_files=["res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.s3tc.ctex", "res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.etc2.ctex"]
+dest_files=["res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.bptc.ctex", "res://.godot/imported/wall_panel_albedo.png-32b29c096f9c2d859781d3ebb573a3fd.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

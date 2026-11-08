@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvu6hrf1jdlrv"
-path.s3tc="res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.s3tc.ctex"
-path.etc2="res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.etc2.ctex"
+path.bptc="res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.bptc.ctex"
+path.astc="res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/steel_bright/steel_bright_normal.png"
-dest_files=["res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.s3tc.ctex", "res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.etc2.ctex"]
+dest_files=["res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.bptc.ctex", "res://.godot/imported/steel_bright_normal.png-2c702e8447ae77fd92d32976a0d04950.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://68apkk6e3u11"
-path.s3tc="res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.s3tc.ctex"
-path.etc2="res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.etc2.ctex"
+path.bptc="res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.bptc.ctex"
+path.astc="res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/concrete/concrete_albedo.png"
-dest_files=["res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.s3tc.ctex", "res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.etc2.ctex"]
+dest_files=["res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.bptc.ctex", "res://.godot/imported/concrete_albedo.png-ad57de4bc19e259ee193b8971194dd6c.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

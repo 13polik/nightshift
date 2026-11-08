@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mf3ojx10vc7o"
-path.s3tc="res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.s3tc.ctex"
-path.etc2="res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.etc2.ctex"
+path.bptc="res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.bptc.ctex"
+path.astc="res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/hunter_skin/hunter_skin_orm.png"
-dest_files=["res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.s3tc.ctex", "res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.etc2.ctex"]
+dest_files=["res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.bptc.ctex", "res://.godot/imported/hunter_skin_orm.png-7ac6ba9a6c3be2d4708d25daac51c128.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

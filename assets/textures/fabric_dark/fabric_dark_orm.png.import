@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp6cn4ceth07d"
-path.s3tc="res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.s3tc.ctex"
-path.etc2="res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.etc2.ctex"
+path.bptc="res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.bptc.ctex"
+path.astc="res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/fabric_dark/fabric_dark_orm.png"
-dest_files=["res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.s3tc.ctex", "res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.etc2.ctex"]
+dest_files=["res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.bptc.ctex", "res://.godot/imported/fabric_dark_orm.png-d06e148fd712e1a2dc290f1548f7635e.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
