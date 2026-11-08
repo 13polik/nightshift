@@ -1,0 +1,221 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="enemy_s"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="hunter"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event_s"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="ev_power_failure"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="ev_lockdown"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="ev_alarm"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="ev_hunter_alert"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="ev_emergency_evacuation"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="ev_generator_noise"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="loot_s"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="obj_s"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="rew_s"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="mis_s"]
+
+[sub_resource type="Resource" id="loot"]
+script = ExtResource("loot_s")
+weights = {
+"access_decoder": 0.4,
+"arc_cell": 1.0,
+"arc_emitter": 0.4,
+"bandage": 3.0,
+"battery": 3.0,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="o_reach_checkpoint"]
+script = ExtResource("obj_s")
+id = &"reach_checkpoint"
+title_key = "OBJ_FINAL_SHIFT_REACH_CHECKPOINT"
+hint_key = "OBJ_FINAL_SHIFT_REACH_CHECKPOINT_HINT"
+target_tag = &"deep_checkpoint"
+threat_on_complete = 0.02
+reward_xp = 40
+
+[sub_resource type="Resource" id="o_generator"]
+script = ExtResource("obj_s")
+id = &"generator"
+title_key = "OBJ_FINAL_SHIFT_GENERATOR"
+hint_key = "OBJ_FINAL_SHIFT_GENERATOR_HINT"
+type = 1
+target_tag = &"generator"
+duration = 4.00
+sets_flag = &"power_generator"
+events_on_complete = PackedStringArray("generator_noise")
+threat_on_complete = 0.08
+work_noise = 16.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_power"]
+script = ExtResource("obj_s")
+id = &"power"
+title_key = "OBJ_FINAL_SHIFT_POWER"
+hint_key = "OBJ_FINAL_SHIFT_POWER_HINT"
+type = 1
+target_tag = &"power_breaker"
+duration = 2.00
+sets_flag = &"power_main"
+threat_on_complete = 0.06
+reward_xp = 70
+
+[sub_resource type="Resource" id="o_deep_security"]
+script = ExtResource("obj_s")
+id = &"deep_security"
+title_key = "OBJ_FINAL_SHIFT_DEEP_SECURITY"
+hint_key = "OBJ_FINAL_SHIFT_DEEP_SECURITY_HINT"
+type = 1
+target_tag = &"deep_security"
+duration = 6.00
+work_noise = 4.00
+reward_xp = 90
+events_on_complete = PackedStringArray("alarm")
+
+[sub_resource type="Resource" id="o_origin"]
+script = ExtResource("obj_s")
+id = &"origin"
+title_key = "OBJ_FINAL_SHIFT_ORIGIN"
+hint_key = "OBJ_FINAL_SHIFT_ORIGIN_HINT"
+type = 1
+target_tag = &"origin_terminal"
+duration = 10.00
+work_noise = 6.00
+reward_xp = 140
+
+[sub_resource type="Resource" id="o_grid_parts"]
+script = ExtResource("obj_s")
+id = &"grid_parts"
+title_key = "OBJ_FINAL_SHIFT_GRID_PARTS"
+hint_key = "OBJ_FINAL_SHIFT_GRID_PARTS_HINT"
+type = 2
+item_pool = PackedStringArray("fuse", "circuit_board", "capacitor")
+pick_items = 2
+spawn_items_tag = &"component_spawn"
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_rebuild_grid"]
+script = ExtResource("obj_s")
+id = &"rebuild_grid"
+title_key = "OBJ_FINAL_SHIFT_REBUILD_GRID"
+hint_key = "OBJ_FINAL_SHIFT_REBUILD_GRID_HINT"
+type = 3
+target_tag = &"grid_panel"
+item_pool = PackedStringArray("@grid_parts")
+duration = 8.00
+work_noise = 14.00
+threat_on_complete = 0.08
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_director_key"]
+script = ExtResource("obj_s")
+id = &"director_key"
+title_key = "OBJ_FINAL_SHIFT_DIRECTOR_KEY"
+hint_key = "OBJ_FINAL_SHIFT_DIRECTOR_KEY_HINT"
+type = 2
+item_pool = PackedStringArray("keycard")
+required_count = 1
+spawn_items_tag = &"keycard_spawn"
+spare_items = 0
+reveal_item_location = true
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_seal_nest"]
+script = ExtResource("obj_s")
+id = &"seal_nest"
+title_key = "OBJ_FINAL_SHIFT_SEAL_NEST"
+hint_key = "OBJ_FINAL_SHIFT_SEAL_NEST_HINT"
+type = 1
+target_tag = &"nest_console"
+duration = 12.00
+work_noise = 16.00
+reward_xp = 200
+events_on_start = PackedStringArray("hunter_alert")
+grants_item = &"sample_case"
+threat_on_complete = 0.15
+
+[sub_resource type="Resource" id="o_last_sample"]
+script = ExtResource("obj_s")
+id = &"last_sample"
+title_key = "OBJ_FINAL_SHIFT_LAST_SAMPLE"
+hint_key = "OBJ_FINAL_SHIFT_LAST_SAMPLE_HINT"
+type = 2
+item_pool = PackedStringArray("sample_case")
+reward_xp = 40
+
+[sub_resource type="Resource" id="o_call_evac"]
+script = ExtResource("obj_s")
+id = &"call_evac"
+title_key = "OBJ_FINAL_SHIFT_CALL_EVAC"
+hint_key = "OBJ_FINAL_SHIFT_CALL_EVAC_HINT"
+type = 1
+target_tag = &"surface_radio"
+duration = 4.00
+events_on_complete = PackedStringArray("emergency_evacuation")
+threat_on_complete = 0.06
+work_noise = 6.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_survive"]
+script = ExtResource("obj_s")
+id = &"survive"
+title_key = "OBJ_FINAL_SHIFT_SURVIVE"
+hint_key = "OBJ_FINAL_SHIFT_SURVIVE_HINT"
+type = 4
+duration = 90.00
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_extract"]
+script = ExtResource("obj_s")
+id = &"extract"
+title_key = "OBJ_FINAL_SHIFT_EXTRACT"
+hint_key = "OBJ_FINAL_SHIFT_EXTRACT_HINT"
+type = 5
+target_tag = &"extraction"
+duration = 90.00
+reward_xp = 0
+
+[sub_resource type="Resource" id="o_opt_drives"]
+script = ExtResource("obj_s")
+id = &"opt_drives"
+title_key = "OBJ_FINAL_SHIFT_OPT_DRIVES"
+hint_key = "OBJ_FINAL_SHIFT_OPT_DRIVES_HINT"
+type = 2
+item_pool = PackedStringArray("data_drive")
+required_count = 2
+spawn_items_tag = &"research"
+spare_items = 1
+reveal_item_location = false
+reward_xp = 120
+reward_currency = 30
+optional = true
+
+[sub_resource type="Resource" id="rewards"]
+script = ExtResource("rew_s")
+
+[resource]
+script = ExtResource("mis_s")
+id = &"final_shift"
+name_key = "MISSION_FINAL_SHIFT"
+description_key = "MISSION_FINAL_SHIFT_DESC"
+location_key = "LOC_FINAL_SHIFT"
+layout_path = "res://data/facilities/final_shift.json"
+objectives = Array[ExtResource("obj_s")]([SubResource("o_reach_checkpoint"), SubResource("o_generator"), SubResource("o_power"), SubResource("o_deep_security"), SubResource("o_origin"), SubResource("o_grid_parts"), SubResource("o_rebuild_grid"), SubResource("o_director_key"), SubResource("o_seal_nest"), SubResource("o_last_sample"), SubResource("o_call_evac"), SubResource("o_survive"), SubResource("o_extract")])
+optional_objectives = Array[ExtResource("obj_s")]([SubResource("o_opt_drives")])
+events = Array[ExtResource("event_s")]([ExtResource("ev_power_failure"), ExtResource("ev_lockdown"), ExtResource("ev_alarm"), ExtResource("ev_hunter_alert"), ExtResource("ev_emergency_evacuation"), ExtResource("ev_generator_noise")])
+loot_table = SubResource("loot")
+rewards = SubResource("rewards")
+enemies = Array[ExtResource("enemy_s")]([ExtResource("hunter"), ExtResource("hunter"), ExtResource("hunter")])
+enemy_release_time = 80.0
+recommended_level = 8
+unlock_level = 8
+threat_per_minute = 0.060
+target_duration_minutes = 20.0

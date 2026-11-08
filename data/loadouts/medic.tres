@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LoadoutOptionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/loadout_option_data.gd" id="1_ls3jy"]
+
+[resource]
+script = ExtResource("1_ls3jy")
+id = &"medic"
+name_key = "KIT_MEDIC"
+description_key = "KIT_MEDIC_DESC"
+unlock_level = 2
+items = {
+"medkit": 1
+}

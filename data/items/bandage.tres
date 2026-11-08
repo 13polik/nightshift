@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_fhnjs"]
+
+[resource]
+script = ExtResource("1_fhnjs")
+id = &"bandage"
+name_key = "ITEM_BANDAGE"
+description_key = "ITEM_BANDAGE_DESC"
+icon_glyph = "b"
+color = Color(0.95, 0.9, 0.85, 1)
+max_stack = 3
+use_effect = 1
+effect_amount = 22.0
+use_time = 1.8
+tags = PackedStringArray()

@@ -1,0 +1,161 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="enemy_s"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="hunter"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event_s"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="ev_power_failure"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="ev_lockdown"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="ev_alarm"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="ev_hunter_alert"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="ev_emergency_evacuation"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="ev_generator_noise"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="loot_s"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="obj_s"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="rew_s"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="mis_s"]
+
+[sub_resource type="Resource" id="loot"]
+script = ExtResource("loot_s")
+weights = {
+"access_decoder": 1.0,
+"arc_cell": 1.0,
+"arc_emitter": 0.4,
+"bandage": 3.0,
+"battery": 3.0,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="o_reach_security"]
+script = ExtResource("obj_s")
+id = &"reach_security"
+title_key = "OBJ_DEEP_ARCHIVE_REACH_SECURITY"
+hint_key = "OBJ_DEEP_ARCHIVE_REACH_SECURITY_HINT"
+target_tag = &"archive_security"
+threat_on_complete = 0.02
+reward_xp = 40
+
+[sub_resource type="Resource" id="o_lockdown"]
+script = ExtResource("obj_s")
+id = &"lockdown"
+title_key = "OBJ_DEEP_ARCHIVE_LOCKDOWN"
+hint_key = "OBJ_DEEP_ARCHIVE_LOCKDOWN_HINT"
+type = 1
+target_tag = &"lockdown_terminal"
+duration = 6.00
+work_noise = 4.00
+reward_xp = 90
+events_on_complete = PackedStringArray("alarm")
+
+[sub_resource type="Resource" id="o_vault_key"]
+script = ExtResource("obj_s")
+id = &"vault_key"
+title_key = "OBJ_DEEP_ARCHIVE_VAULT_KEY"
+hint_key = "OBJ_DEEP_ARCHIVE_VAULT_KEY_HINT"
+type = 2
+item_pool = PackedStringArray("keycard")
+required_count = 1
+spawn_items_tag = &"keycard_spawn"
+spare_items = 0
+reveal_item_location = true
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_decrypt"]
+script = ExtResource("obj_s")
+id = &"decrypt"
+title_key = "OBJ_DEEP_ARCHIVE_DECRYPT"
+hint_key = "OBJ_DEEP_ARCHIVE_DECRYPT_HINT"
+type = 1
+target_tag = &"vault_terminal"
+duration = 10.00
+work_noise = 6.00
+reward_xp = 130
+events_on_start = PackedStringArray("hunter_alert")
+
+[sub_resource type="Resource" id="o_kessler_files"]
+script = ExtResource("obj_s")
+id = &"kessler_files"
+title_key = "OBJ_DEEP_ARCHIVE_KESSLER_FILES"
+hint_key = "OBJ_DEEP_ARCHIVE_KESSLER_FILES_HINT"
+type = 2
+item_pool = PackedStringArray("data_drive")
+required_count = 3
+spawn_items_tag = &"research"
+spare_items = 1
+reveal_item_location = true
+reward_xp = 150
+
+[sub_resource type="Resource" id="o_call_evac"]
+script = ExtResource("obj_s")
+id = &"call_evac"
+title_key = "OBJ_DEEP_ARCHIVE_CALL_EVAC"
+hint_key = "OBJ_DEEP_ARCHIVE_CALL_EVAC_HINT"
+type = 1
+target_tag = &"dock_phone"
+duration = 4.00
+events_on_complete = PackedStringArray("emergency_evacuation")
+threat_on_complete = 0.06
+work_noise = 6.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_survive"]
+script = ExtResource("obj_s")
+id = &"survive"
+title_key = "OBJ_DEEP_ARCHIVE_SURVIVE"
+hint_key = "OBJ_DEEP_ARCHIVE_SURVIVE_HINT"
+type = 4
+duration = 60.00
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_extract"]
+script = ExtResource("obj_s")
+id = &"extract"
+title_key = "OBJ_DEEP_ARCHIVE_EXTRACT"
+hint_key = "OBJ_DEEP_ARCHIVE_EXTRACT_HINT"
+type = 5
+target_tag = &"extraction"
+duration = 90.00
+reward_xp = 0
+
+[sub_resource type="Resource" id="o_opt_server"]
+script = ExtResource("obj_s")
+id = &"opt_server"
+title_key = "OBJ_DEEP_ARCHIVE_OPT_SERVER"
+hint_key = "OBJ_DEEP_ARCHIVE_OPT_SERVER_HINT"
+type = 1
+target_tag = &"server_terminal"
+duration = 8.00
+work_noise = 4.00
+reward_xp = 100
+reward_currency = 25
+optional = true
+
+[sub_resource type="Resource" id="rewards"]
+script = ExtResource("rew_s")
+
+[resource]
+script = ExtResource("mis_s")
+id = &"deep_archive"
+name_key = "MISSION_DEEP_ARCHIVE"
+description_key = "MISSION_DEEP_ARCHIVE_DESC"
+location_key = "LOC_DEEP_ARCHIVE"
+layout_path = "res://data/facilities/deep_archive.json"
+objectives = Array[ExtResource("obj_s")]([SubResource("o_reach_security"), SubResource("o_lockdown"), SubResource("o_vault_key"), SubResource("o_decrypt"), SubResource("o_kessler_files"), SubResource("o_call_evac"), SubResource("o_survive"), SubResource("o_extract")])
+optional_objectives = Array[ExtResource("obj_s")]([SubResource("o_opt_server")])
+events = Array[ExtResource("event_s")]([ExtResource("ev_power_failure"), ExtResource("ev_lockdown"), ExtResource("ev_alarm"), ExtResource("ev_hunter_alert"), ExtResource("ev_emergency_evacuation"), ExtResource("ev_generator_noise")])
+loot_table = SubResource("loot")
+rewards = SubResource("rewards")
+enemies = Array[ExtResource("enemy_s")]([ExtResource("hunter")])
+enemy_release_time = 80.0
+recommended_level = 3
+unlock_level = 3
+threat_per_minute = 0.040
+target_duration_minutes = 14.0
+start_powered = true

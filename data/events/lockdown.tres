@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EventData" format=3]
+
+[ext_resource type="Script" path="res://scripts/missions/events/lockdown_event.gd" id="1_udqek"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="2_ye1yf"]
+
+[resource]
+script = ExtResource("2_ye1yf")
+id = &"lockdown"
+name_key = "EVENT_LOCKDOWN"
+banner_key = "EVENT_LOCKDOWN_BANNER"
+event_script = ExtResource("1_udqek")
+weight = 1.2
+min_threat = 0.15
+duration = 40.0
+params = {
+"doors": 3
+}

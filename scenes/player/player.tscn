@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player_character.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/player/player_health.gd" id="2_health"]
+[ext_resource type="Script" path="res://scripts/inventory/player_inventory.gd" id="3_inv"]
+[ext_resource type="Script" path="res://scripts/player/player_flashlight.gd" id="4_light"]
+[ext_resource type="Script" path="res://scripts/interaction/revive_interactable.gd" id="5_revive"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.34
+height = 1.75
+
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_player")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="VisualRoot" type="Node3D" parent="."]
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_health")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_inv")
+
+[node name="Flashlight" type="Node3D" parent="."]
+script = ExtResource("4_light")
+
+[node name="Revive" type="Node3D" parent="."]
+script = ExtResource("5_revive")

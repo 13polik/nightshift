@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EventData" format=3]
+
+[ext_resource type="Script" path="res://scripts/missions/events/hunter_alert_event.gd" id="1_yvj2k"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="2_sxk3n"]
+
+[resource]
+script = ExtResource("2_sxk3n")
+id = &"hunter_alert"
+name_key = "EVENT_HUNTER_ALERT"
+banner_key = "EVENT_HUNTER_ALERT_BANNER"
+event_script = ExtResource("1_yvj2k")
+min_threat = 0.1
+cooldown = 100.0
+params = {
+"aggression": 0.5
+}

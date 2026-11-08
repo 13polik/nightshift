@@ -1,0 +1,184 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="enemy_s"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="hunter"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event_s"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="ev_power_failure"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="ev_lockdown"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="ev_alarm"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="ev_hunter_alert"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="ev_emergency_evacuation"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="ev_generator_noise"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="loot_s"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="obj_s"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="rew_s"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="mis_s"]
+
+[sub_resource type="Resource" id="loot"]
+script = ExtResource("loot_s")
+weights = {
+"access_decoder": 0.4,
+"arc_cell": 1.0,
+"arc_emitter": 0.4,
+"bandage": 3.0,
+"battery": 3.0,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="o_reach_control"]
+script = ExtResource("obj_s")
+id = &"reach_control"
+title_key = "OBJ_OVERLOAD_REACH_CONTROL"
+hint_key = "OBJ_OVERLOAD_REACH_CONTROL_HINT"
+target_tag = &"control_room"
+threat_on_complete = 0.02
+reward_xp = 40
+
+[sub_resource type="Resource" id="o_generator"]
+script = ExtResource("obj_s")
+id = &"generator"
+title_key = "OBJ_OVERLOAD_GENERATOR"
+hint_key = "OBJ_OVERLOAD_GENERATOR_HINT"
+type = 1
+target_tag = &"generator"
+duration = 4.00
+sets_flag = &"power_generator"
+events_on_complete = PackedStringArray("generator_noise")
+threat_on_complete = 0.08
+work_noise = 16.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_power"]
+script = ExtResource("obj_s")
+id = &"power"
+title_key = "OBJ_OVERLOAD_POWER"
+hint_key = "OBJ_OVERLOAD_POWER_HINT"
+type = 1
+target_tag = &"power_breaker"
+duration = 2.00
+sets_flag = &"power_main"
+threat_on_complete = 0.06
+reward_xp = 70
+
+[sub_resource type="Resource" id="o_coolant"]
+script = ExtResource("obj_s")
+id = &"coolant"
+title_key = "OBJ_OVERLOAD_COOLANT"
+hint_key = "OBJ_OVERLOAD_COOLANT_HINT"
+type = 1
+target_tag = &"coolant_valve"
+duration = 6.00
+work_noise = 10.00
+reward_xp = 90
+
+[sub_resource type="Resource" id="o_controller_parts"]
+script = ExtResource("obj_s")
+id = &"controller_parts"
+title_key = "OBJ_OVERLOAD_CONTROLLER_PARTS"
+hint_key = "OBJ_OVERLOAD_CONTROLLER_PARTS_HINT"
+type = 2
+item_pool = PackedStringArray("fuse", "circuit_board", "capacitor")
+pick_items = 2
+spawn_items_tag = &"component_spawn"
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_rebuild_controller"]
+script = ExtResource("obj_s")
+id = &"rebuild_controller"
+title_key = "OBJ_OVERLOAD_REBUILD_CONTROLLER"
+hint_key = "OBJ_OVERLOAD_REBUILD_CONTROLLER_HINT"
+type = 3
+target_tag = &"turbine_panel"
+item_pool = PackedStringArray("@controller_parts")
+duration = 8.00
+work_noise = 14.00
+threat_on_complete = 0.08
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_stabilise"]
+script = ExtResource("obj_s")
+id = &"stabilise"
+title_key = "OBJ_OVERLOAD_STABILISE"
+hint_key = "OBJ_OVERLOAD_STABILISE_HINT"
+type = 1
+target_tag = &"core_console"
+duration = 10.00
+work_noise = 12.00
+reward_xp = 150
+events_on_start = PackedStringArray("hunter_alert")
+threat_on_complete = 0.10
+
+[sub_resource type="Resource" id="o_call_evac"]
+script = ExtResource("obj_s")
+id = &"call_evac"
+title_key = "OBJ_OVERLOAD_CALL_EVAC"
+hint_key = "OBJ_OVERLOAD_CALL_EVAC_HINT"
+type = 1
+target_tag = &"plant_radio"
+duration = 4.00
+events_on_complete = PackedStringArray("emergency_evacuation")
+threat_on_complete = 0.06
+work_noise = 6.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_survive"]
+script = ExtResource("obj_s")
+id = &"survive"
+title_key = "OBJ_OVERLOAD_SURVIVE"
+hint_key = "OBJ_OVERLOAD_SURVIVE_HINT"
+type = 4
+duration = 70.00
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_extract"]
+script = ExtResource("obj_s")
+id = &"extract"
+title_key = "OBJ_OVERLOAD_EXTRACT"
+hint_key = "OBJ_OVERLOAD_EXTRACT_HINT"
+type = 5
+target_tag = &"extraction"
+duration = 90.00
+reward_xp = 0
+
+[sub_resource type="Resource" id="o_opt_server"]
+script = ExtResource("obj_s")
+id = &"opt_server"
+title_key = "OBJ_OVERLOAD_OPT_SERVER"
+hint_key = "OBJ_OVERLOAD_OPT_SERVER_HINT"
+type = 1
+target_tag = &"server_terminal"
+duration = 8.00
+work_noise = 4.00
+reward_xp = 100
+reward_currency = 25
+optional = true
+
+[sub_resource type="Resource" id="rewards"]
+script = ExtResource("rew_s")
+
+[resource]
+script = ExtResource("mis_s")
+id = &"overload"
+name_key = "MISSION_OVERLOAD"
+description_key = "MISSION_OVERLOAD_DESC"
+location_key = "LOC_OVERLOAD"
+layout_path = "res://data/facilities/overload.json"
+objectives = Array[ExtResource("obj_s")]([SubResource("o_reach_control"), SubResource("o_generator"), SubResource("o_power"), SubResource("o_coolant"), SubResource("o_controller_parts"), SubResource("o_rebuild_controller"), SubResource("o_stabilise"), SubResource("o_call_evac"), SubResource("o_survive"), SubResource("o_extract")])
+optional_objectives = Array[ExtResource("obj_s")]([SubResource("o_opt_server")])
+events = Array[ExtResource("event_s")]([ExtResource("ev_power_failure"), ExtResource("ev_lockdown"), ExtResource("ev_alarm"), ExtResource("ev_hunter_alert"), ExtResource("ev_emergency_evacuation"), ExtResource("ev_generator_noise")])
+loot_table = SubResource("loot")
+rewards = SubResource("rewards")
+enemies = Array[ExtResource("enemy_s")]([ExtResource("hunter")])
+enemy_release_time = 80.0
+recommended_level = 3
+unlock_level = 3
+threat_per_minute = 0.045
+target_duration_minutes = 16.0

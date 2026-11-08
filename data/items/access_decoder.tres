@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_hrae6"]
+
+[resource]
+script = ExtResource("1_hrae6")
+id = &"access_decoder"
+name_key = "ITEM_ACCESS_DECODER"
+description_key = "ITEM_ACCESS_DECODER_DESC"
+category = 1
+icon_glyph = "D"
+color = Color(0.3, 0.95, 0.9, 1)
+consumed_on_use = false
+tags = PackedStringArray()

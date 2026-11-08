@@ -1,0 +1,93 @@
+; Engine configuration file.
+; NIGHT SHIFT - 1-4 player online co-op survival horror (Godot 4.x, mobile first)
+
+config_version=5
+
+[application]
+
+config/name="NIGHT SHIFT"
+config/description="1-4 player online co-op survival horror."
+config/version="0.1.0"
+run/main_scene="res://scenes/boot/boot.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="res://icon.png"
+boot_splash/bg_color=Color(0.02, 0.02, 0.025, 1)
+boot_splash/show_image=true
+boot_splash/image="res://assets/ui/splash/splash.png"
+boot_splash/stretch_mode=1
+boot_splash/use_filter=true
+boot_splash/minimum_display_time=1200
+run/low_processor_mode=false
+
+[autoload]
+
+Log="*res://scripts/core/log.gd"
+Events="*res://scripts/core/event_bus.gd"
+SaveManager="*res://scripts/core/save/save_manager.gd"
+Settings="*res://scripts/core/settings.gd"
+Loc="*res://scripts/core/localization.gd"
+Content="*res://scripts/core/content_db.gd"
+GameInput="*res://scripts/input/game_input.gd"
+Audio="*res://scripts/audio/audio_manager.gd"
+Profile="*res://scripts/progression/profile_service.gd"
+Net="*res://scripts/networking/network_manager.gd"
+Router="*res://scripts/core/scene_router.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
+window/energy_saving/keep_screen_on=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=false
+
+[internationalization]
+
+locale/fallback="en"
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="players"
+3d_physics/layer_3="enemies"
+3d_physics/layer_4="interactables"
+3d_physics/layer_5="pickups"
+3d_physics/layer_6="doors"
+
+[physics]
+
+common/physics_ticks_per_second=60
+3d/physics_engine="GodotPhysics3D"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="mobile"
+textures/vram_compression/import_etc2_astc=true
+occlusion_culling/use_occlusion_culling=true
+lights_and_shadows/directional_shadow/size=2048
+lights_and_shadows/positional_shadow/atlas_size=2048
+lights_and_shadows/positional_shadow/atlas_size.mobile=1024
+anti_aliasing/quality/msaa_3d=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+
+[navigation]
+
+3d/default_cell_size=0.25
+3d/default_cell_height=0.2
+
+[shader_globals]
+
+ns_quality={
+"type": "float",
+"value": 1.0
+}
+
+[nightshift]
+
+network/relay_url="wss://nightshift-relay.onrender.com"

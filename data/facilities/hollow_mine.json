@@ -1,0 +1,1019 @@
+{
+	"id": "hollow_mine",
+	"name_key": "LOC_HOLLOW_MINE",
+	"notes": [
+		"NOTE_HOLLOW_MINE_1",
+		"NOTE_HOLLOW_MINE_2",
+		"NOTE_HOLLOW_MINE_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 3.6
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_HOLLOW_MINE_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				11,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_HOLLOW_MINE_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				21,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_HOLLOW_MINE_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				11,
+				10,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion",
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						22.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						11.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						2.8,
+						12.5
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_HOLLOW_MINE_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				11,
+				8,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"exit_yard"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						22.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						11.8
+					]
+				}
+			]
+		},
+		{
+			"id": "lamp_room",
+			"name_key": "ROOM_HOLLOW_MINE_LAMP_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				8,
+				9
+			],
+			"kind": "security",
+			"tags": [
+				"lamp_room"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						16.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "gallery_1",
+			"name_key": "ROOM_HOLLOW_MINE_GALLERY_1",
+			"level": 0,
+			"rect": [
+				20,
+				2,
+				14,
+				9
+			],
+			"kind": "tunnel",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						27.0,
+						6.5
+					]
+				}
+			]
+		},
+		{
+			"id": "foreman",
+			"name_key": "ROOM_HOLLOW_MINE_FOREMAN",
+			"level": 0,
+			"rect": [
+				34,
+				2,
+				8,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "foreman_terminal",
+					"pos": [
+						38.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "collapse",
+			"name_key": "ROOM_HOLLOW_MINE_COLLAPSE",
+			"level": 0,
+			"rect": [
+				42,
+				2,
+				10,
+				9
+			],
+			"kind": "tunnel",
+			"tags": [
+				"collapse"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						47.0,
+						6.5
+					]
+				}
+			]
+		},
+		{
+			"id": "cavern",
+			"name_key": "ROOM_HOLLOW_MINE_CAVERN",
+			"level": 0,
+			"rect": [
+				12,
+				14,
+				14,
+				7
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						19.0,
+						17.5
+					]
+				}
+			]
+		},
+		{
+			"id": "lift_house",
+			"name_key": "ROOM_HOLLOW_MINE_LIFT_HOUSE",
+			"level": 0,
+			"rect": [
+				26,
+				14,
+				10,
+				7
+			],
+			"kind": "maintenance",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"component_spawn",
+				"tools"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "lift_winch",
+					"pos": [
+						26.4,
+						16.33
+					],
+					"face": "e"
+				},
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "lift_console",
+					"pos": [
+						26.4,
+						18.67
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_HOLLOW_MINE_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				36,
+				14,
+				8,
+				7
+			],
+			"kind": "tunnel",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "middle_extra_2",
+			"name_key": "ROOM_HOLLOW_MINE_MIDDLE_EXTRA_2",
+			"level": 0,
+			"rect": [
+				44,
+				14,
+				8,
+				7
+			],
+			"kind": "tunnel",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "generator_room",
+			"name_key": "ROOM_HOLLOW_MINE_GENERATOR_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				24,
+				10,
+				9
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						15.33,
+						30.4
+					],
+					"face": "n"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						18.67,
+						32.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "drainage",
+			"name_key": "ROOM_HOLLOW_MINE_DRAINAGE",
+			"level": 0,
+			"rect": [
+				22,
+				24,
+				10,
+				9
+			],
+			"kind": "pump",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools",
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "stores",
+			"name_key": "ROOM_HOLLOW_MINE_STORES",
+			"level": 0,
+			"rect": [
+				32,
+				24,
+				10,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "first_aid",
+			"name_key": "ROOM_HOLLOW_MINE_FIRST_AID",
+			"level": 0,
+			"rect": [
+				42,
+				24,
+				10,
+				9
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				11
+			],
+			"b": [
+				12,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				11
+			],
+			"b": [
+				52,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				21
+			],
+			"b": [
+				12,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				21
+			],
+			"b": [
+				52,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_lamp_room",
+			"a": [
+				16,
+				10
+			],
+			"b": [
+				16,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_gallery_1",
+			"a": [
+				27,
+				10
+			],
+			"b": [
+				27,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_foreman",
+			"a": [
+				38,
+				10
+			],
+			"b": [
+				38,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_collapse",
+			"a": [
+				47,
+				10
+			],
+			"b": [
+				47,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_cavern_n",
+			"a": [
+				13,
+				14
+			],
+			"b": [
+				13,
+				13
+			]
+		},
+		{
+			"id": "door_cavern_s",
+			"type": "normal",
+			"a": [
+				24,
+				20
+			],
+			"b": [
+				24,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_lift_house_n",
+			"a": [
+				27,
+				14
+			],
+			"b": [
+				27,
+				13
+			]
+		},
+		{
+			"id": "door_lift_house_s",
+			"type": "normal",
+			"a": [
+				34,
+				20
+			],
+			"b": [
+				34,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				37,
+				14
+			],
+			"b": [
+				37,
+				13
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				42,
+				20
+			],
+			"b": [
+				42,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_middle_extra_2_n",
+			"a": [
+				45,
+				14
+			],
+			"b": [
+				45,
+				13
+			]
+		},
+		{
+			"id": "door_middle_extra_2_s",
+			"type": "normal",
+			"a": [
+				50,
+				20
+			],
+			"b": [
+				50,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_generator_room",
+			"a": [
+				17,
+				24
+			],
+			"b": [
+				17,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_drainage",
+			"a": [
+				27,
+				24
+			],
+			"b": [
+				27,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_stores",
+			"a": [
+				37,
+				24
+			],
+			"b": [
+				37,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_first_aid",
+			"a": [
+				47,
+				24
+			],
+			"b": [
+				47,
+				23
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					12.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					16.0,
+					6.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					27.5,
+					12.5
+				],
+				[
+					27.0,
+					6.5
+				],
+				[
+					27.5,
+					12.5
+				],
+				[
+					38.5,
+					12.5
+				],
+				[
+					38.0,
+					6.5
+				],
+				[
+					38.5,
+					12.5
+				],
+				[
+					47.5,
+					12.5
+				],
+				[
+					47.0,
+					6.5
+				],
+				[
+					47.5,
+					12.5
+				],
+				[
+					51.0,
+					12.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					22.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					17.0,
+					28.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					27.0,
+					28.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					37.5,
+					22.5
+				],
+				[
+					37.0,
+					28.5
+				],
+				[
+					37.5,
+					22.5
+				],
+				[
+					47.5,
+					22.5
+				],
+				[
+					47.0,
+					28.5
+				],
+				[
+					47.5,
+					22.5
+				],
+				[
+					51.0,
+					22.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					12.5
+				],
+				[
+					19.0,
+					17.5
+				],
+				[
+					24.5,
+					22.5
+				],
+				[
+					27.5,
+					12.5
+				],
+				[
+					31.0,
+					17.5
+				],
+				[
+					34.5,
+					22.5
+				],
+				[
+					37.5,
+					12.5
+				],
+				[
+					40.0,
+					17.5
+				],
+				[
+					42.5,
+					22.5
+				],
+				[
+					45.5,
+					12.5
+				],
+				[
+					48.0,
+					17.5
+				],
+				[
+					50.5,
+					22.5
+				],
+				[
+					50.0,
+					22.5
+				],
+				[
+					14.0,
+					22.5
+				],
+				[
+					14.0,
+					12.5
+				]
+			]
+		}
+	]
+}

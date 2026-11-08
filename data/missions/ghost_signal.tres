@@ -1,0 +1,186 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="enemy_s"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="hunter"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event_s"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="ev_power_failure"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="ev_lockdown"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="ev_alarm"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="ev_hunter_alert"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="ev_emergency_evacuation"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="ev_generator_noise"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="loot_s"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="obj_s"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="rew_s"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="mis_s"]
+
+[sub_resource type="Resource" id="loot"]
+script = ExtResource("loot_s")
+weights = {
+"access_decoder": 0.4,
+"arc_cell": 1.0,
+"arc_emitter": 0.4,
+"bandage": 3.0,
+"battery": 3.0,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="o_reach_lobby"]
+script = ExtResource("obj_s")
+id = &"reach_lobby"
+title_key = "OBJ_GHOST_SIGNAL_REACH_LOBBY"
+hint_key = "OBJ_GHOST_SIGNAL_REACH_LOBBY_HINT"
+target_tag = &"visitor_centre"
+threat_on_complete = 0.02
+reward_xp = 40
+
+[sub_resource type="Resource" id="o_generator"]
+script = ExtResource("obj_s")
+id = &"generator"
+title_key = "OBJ_GHOST_SIGNAL_GENERATOR"
+hint_key = "OBJ_GHOST_SIGNAL_GENERATOR_HINT"
+type = 1
+target_tag = &"generator"
+duration = 4.00
+sets_flag = &"power_generator"
+events_on_complete = PackedStringArray("generator_noise")
+threat_on_complete = 0.08
+work_noise = 16.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_power"]
+script = ExtResource("obj_s")
+id = &"power"
+title_key = "OBJ_GHOST_SIGNAL_POWER"
+hint_key = "OBJ_GHOST_SIGNAL_POWER_HINT"
+type = 1
+target_tag = &"power_breaker"
+duration = 2.00
+sets_flag = &"power_main"
+threat_on_complete = 0.06
+reward_xp = 70
+
+[sub_resource type="Resource" id="o_trace"]
+script = ExtResource("obj_s")
+id = &"trace"
+title_key = "OBJ_GHOST_SIGNAL_TRACE"
+hint_key = "OBJ_GHOST_SIGNAL_TRACE_HINT"
+type = 1
+target_tag = &"trace_terminal"
+duration = 8.00
+work_noise = 4.00
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_drive_parts"]
+script = ExtResource("obj_s")
+id = &"drive_parts"
+title_key = "OBJ_GHOST_SIGNAL_DRIVE_PARTS"
+hint_key = "OBJ_GHOST_SIGNAL_DRIVE_PARTS_HINT"
+type = 2
+item_pool = PackedStringArray("circuit_board", "capacitor", "fuse")
+pick_items = 2
+spawn_items_tag = &"component_spawn"
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_realign"]
+script = ExtResource("obj_s")
+id = &"realign"
+title_key = "OBJ_GHOST_SIGNAL_REALIGN"
+hint_key = "OBJ_GHOST_SIGNAL_REALIGN_HINT"
+type = 3
+target_tag = &"dish_drive"
+item_pool = PackedStringArray("@drive_parts")
+duration = 8.00
+work_noise = 16.00
+threat_on_complete = 0.08
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_answer"]
+script = ExtResource("obj_s")
+id = &"answer"
+title_key = "OBJ_GHOST_SIGNAL_ANSWER"
+hint_key = "OBJ_GHOST_SIGNAL_ANSWER_HINT"
+type = 1
+target_tag = &"answer_console"
+duration = 12.00
+work_noise = 14.00
+reward_xp = 160
+events_on_start = PackedStringArray("hunter_alert")
+threat_on_complete = 0.12
+
+[sub_resource type="Resource" id="o_call_evac"]
+script = ExtResource("obj_s")
+id = &"call_evac"
+title_key = "OBJ_GHOST_SIGNAL_CALL_EVAC"
+hint_key = "OBJ_GHOST_SIGNAL_CALL_EVAC_HINT"
+type = 1
+target_tag = &"helipad_radio"
+duration = 4.00
+events_on_complete = PackedStringArray("emergency_evacuation")
+threat_on_complete = 0.06
+work_noise = 6.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_survive"]
+script = ExtResource("obj_s")
+id = &"survive"
+title_key = "OBJ_GHOST_SIGNAL_SURVIVE"
+hint_key = "OBJ_GHOST_SIGNAL_SURVIVE_HINT"
+type = 4
+duration = 75.00
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_extract"]
+script = ExtResource("obj_s")
+id = &"extract"
+title_key = "OBJ_GHOST_SIGNAL_EXTRACT"
+hint_key = "OBJ_GHOST_SIGNAL_EXTRACT_HINT"
+type = 5
+target_tag = &"extraction"
+duration = 90.00
+reward_xp = 0
+
+[sub_resource type="Resource" id="o_opt_drives"]
+script = ExtResource("obj_s")
+id = &"opt_drives"
+title_key = "OBJ_GHOST_SIGNAL_OPT_DRIVES"
+hint_key = "OBJ_GHOST_SIGNAL_OPT_DRIVES_HINT"
+type = 2
+item_pool = PackedStringArray("data_drive")
+required_count = 2
+spawn_items_tag = &"research"
+spare_items = 1
+reveal_item_location = false
+reward_xp = 120
+reward_currency = 30
+optional = true
+
+[sub_resource type="Resource" id="rewards"]
+script = ExtResource("rew_s")
+
+[resource]
+script = ExtResource("mis_s")
+id = &"ghost_signal"
+name_key = "MISSION_GHOST_SIGNAL"
+description_key = "MISSION_GHOST_SIGNAL_DESC"
+location_key = "LOC_GHOST_SIGNAL"
+layout_path = "res://data/facilities/ghost_signal.json"
+objectives = Array[ExtResource("obj_s")]([SubResource("o_reach_lobby"), SubResource("o_generator"), SubResource("o_power"), SubResource("o_trace"), SubResource("o_drive_parts"), SubResource("o_realign"), SubResource("o_answer"), SubResource("o_call_evac"), SubResource("o_survive"), SubResource("o_extract")])
+optional_objectives = Array[ExtResource("obj_s")]([SubResource("o_opt_drives")])
+events = Array[ExtResource("event_s")]([ExtResource("ev_power_failure"), ExtResource("ev_lockdown"), ExtResource("ev_alarm"), ExtResource("ev_hunter_alert"), ExtResource("ev_emergency_evacuation"), ExtResource("ev_generator_noise")])
+loot_table = SubResource("loot")
+rewards = SubResource("rewards")
+enemies = Array[ExtResource("enemy_s")]([ExtResource("hunter")])
+enemy_release_time = 80.0
+recommended_level = 6
+unlock_level = 6
+threat_per_minute = 0.050
+target_duration_minutes = 15.0

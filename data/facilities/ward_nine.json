@@ -1,0 +1,1178 @@
+{
+	"id": "ward_nine",
+	"name_key": "LOC_WARD_NINE",
+	"notes": [
+		"NOTE_WARD_NINE_1",
+		"NOTE_WARD_NINE_2",
+		"NOTE_WARD_NINE_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 4.0
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_WARD_NINE_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				11,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_WARD_NINE_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				21,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_WARD_NINE_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				11,
+				10,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						22.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						11.8
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_WARD_NINE_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				11,
+				8,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						22.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						11.8
+					]
+				}
+			]
+		},
+		{
+			"id": "reception",
+			"name_key": "ROOM_WARD_NINE_RECEPTION",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				8,
+				9
+			],
+			"kind": "lobby",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "ward_a",
+			"name_key": "ROOM_WARD_NINE_WARD_A",
+			"level": 0,
+			"rect": [
+				20,
+				2,
+				10,
+				9
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "pharmacy",
+			"name_key": "ROOM_WARD_NINE_PHARMACY",
+			"level": 0,
+			"rect": [
+				30,
+				2,
+				7,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"component_spawn"
+			],
+			"features": []
+		},
+		{
+			"id": "isolation",
+			"name_key": "ROOM_WARD_NINE_ISOLATION",
+			"level": 0,
+			"rect": [
+				37,
+				2,
+				10,
+				9
+			],
+			"kind": "containment",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "containment_console",
+					"tag": "isolation_console",
+					"pos": [
+						42.0,
+						2.4
+					],
+					"face": "s"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						42.0,
+						6.5
+					]
+				}
+			]
+		},
+		{
+			"id": "north_extra_1",
+			"name_key": "ROOM_WARD_NINE_NORTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				47,
+				2,
+				5,
+				9
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "nurses",
+			"name_key": "ROOM_WARD_NINE_NURSES",
+			"level": 0,
+			"rect": [
+				12,
+				14,
+				8,
+				7
+			],
+			"kind": "security",
+			"tags": [
+				"nurses_station"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "records_terminal",
+					"pos": [
+						12.4,
+						16.33
+					],
+					"face": "e"
+				},
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						12.4,
+						18.67
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "surgery",
+			"name_key": "ROOM_WARD_NINE_SURGERY",
+			"level": 0,
+			"rect": [
+				20,
+				14,
+				10,
+				7
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "records",
+			"name_key": "ROOM_WARD_NINE_RECORDS",
+			"level": 0,
+			"rect": [
+				30,
+				14,
+				8,
+				7
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "records_terminal",
+					"pos": [
+						30.4,
+						17.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "ward_b",
+			"name_key": "ROOM_WARD_NINE_WARD_B",
+			"level": 0,
+			"rect": [
+				38,
+				14,
+				10,
+				7
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						43.0,
+						17.5
+					]
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_WARD_NINE_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				14,
+				4,
+				7
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "generator_room",
+			"name_key": "ROOM_WARD_NINE_GENERATOR_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				24,
+				10,
+				9
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						15.33,
+						30.4
+					],
+					"face": "n"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						18.67,
+						32.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "morgue",
+			"name_key": "ROOM_WARD_NINE_MORGUE",
+			"level": 0,
+			"rect": [
+				22,
+				24,
+				10,
+				9
+			],
+			"kind": "freezer",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						27.0,
+						28.5
+					]
+				}
+			]
+		},
+		{
+			"id": "laundry",
+			"name_key": "ROOM_WARD_NINE_LAUNDRY",
+			"level": 0,
+			"rect": [
+				32,
+				24,
+				8,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "chapel",
+			"name_key": "ROOM_WARD_NINE_CHAPEL",
+			"level": 0,
+			"rect": [
+				40,
+				24,
+				8,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "ambulance_radio",
+					"pos": [
+						44.0,
+						32.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "south_extra_1",
+			"name_key": "ROOM_WARD_NINE_SOUTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				24,
+				4,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				11
+			],
+			"b": [
+				12,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				11
+			],
+			"b": [
+				52,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				21
+			],
+			"b": [
+				12,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				21
+			],
+			"b": [
+				52,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_reception",
+			"a": [
+				16,
+				10
+			],
+			"b": [
+				16,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_ward_a",
+			"a": [
+				25,
+				10
+			],
+			"b": [
+				25,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_pharmacy",
+			"a": [
+				33,
+				10
+			],
+			"b": [
+				33,
+				11
+			]
+		},
+		{
+			"id": "door_ward_a_pharmacy",
+			"type": "normal",
+			"lockable": true,
+			"a": [
+				29,
+				6
+			],
+			"b": [
+				30,
+				6
+			]
+		},
+		{
+			"type": "secure",
+			"lockdown": true,
+			"id": "door_isolation",
+			"a": [
+				42,
+				10
+			],
+			"b": [
+				42,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_north_extra_1",
+			"a": [
+				49,
+				10
+			],
+			"b": [
+				49,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_nurses_n",
+			"a": [
+				13,
+				14
+			],
+			"b": [
+				13,
+				13
+			]
+		},
+		{
+			"id": "door_nurses_s",
+			"type": "normal",
+			"a": [
+				18,
+				20
+			],
+			"b": [
+				18,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_surgery_n",
+			"a": [
+				21,
+				14
+			],
+			"b": [
+				21,
+				13
+			]
+		},
+		{
+			"id": "door_surgery_s",
+			"type": "normal",
+			"a": [
+				28,
+				20
+			],
+			"b": [
+				28,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_records_n",
+			"a": [
+				31,
+				14
+			],
+			"b": [
+				31,
+				13
+			]
+		},
+		{
+			"id": "door_records_s",
+			"type": "normal",
+			"a": [
+				36,
+				20
+			],
+			"b": [
+				36,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_ward_b_n",
+			"a": [
+				39,
+				14
+			],
+			"b": [
+				39,
+				13
+			]
+		},
+		{
+			"id": "door_ward_b_s",
+			"type": "normal",
+			"a": [
+				46,
+				20
+			],
+			"b": [
+				46,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				49,
+				14
+			],
+			"b": [
+				49,
+				13
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				50,
+				20
+			],
+			"b": [
+				50,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_generator_room",
+			"a": [
+				17,
+				24
+			],
+			"b": [
+				17,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_morgue",
+			"a": [
+				27,
+				24
+			],
+			"b": [
+				27,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_laundry",
+			"a": [
+				36,
+				24
+			],
+			"b": [
+				36,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_chapel",
+			"a": [
+				44,
+				24
+			],
+			"b": [
+				44,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_south_extra_1",
+			"a": [
+				50,
+				24
+			],
+			"b": [
+				50,
+				23
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					12.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					16.0,
+					6.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					25.5,
+					12.5
+				],
+				[
+					25.0,
+					6.5
+				],
+				[
+					25.5,
+					12.5
+				],
+				[
+					33.5,
+					12.5
+				],
+				[
+					33.5,
+					6.5
+				],
+				[
+					33.5,
+					12.5
+				],
+				[
+					42.5,
+					12.5
+				],
+				[
+					42.0,
+					6.5
+				],
+				[
+					42.5,
+					12.5
+				],
+				[
+					49.5,
+					12.5
+				],
+				[
+					49.5,
+					6.5
+				],
+				[
+					49.5,
+					12.5
+				],
+				[
+					51.0,
+					12.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					22.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					17.0,
+					28.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					27.0,
+					28.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					36.5,
+					22.5
+				],
+				[
+					36.0,
+					28.5
+				],
+				[
+					36.5,
+					22.5
+				],
+				[
+					44.5,
+					22.5
+				],
+				[
+					44.0,
+					28.5
+				],
+				[
+					44.5,
+					22.5
+				],
+				[
+					50.5,
+					22.5
+				],
+				[
+					50.0,
+					28.5
+				],
+				[
+					50.5,
+					22.5
+				],
+				[
+					51.0,
+					22.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					12.5
+				],
+				[
+					16.0,
+					17.5
+				],
+				[
+					18.5,
+					22.5
+				],
+				[
+					21.5,
+					12.5
+				],
+				[
+					25.0,
+					17.5
+				],
+				[
+					28.5,
+					22.5
+				],
+				[
+					31.5,
+					12.5
+				],
+				[
+					34.0,
+					17.5
+				],
+				[
+					36.5,
+					22.5
+				],
+				[
+					39.5,
+					12.5
+				],
+				[
+					43.0,
+					17.5
+				],
+				[
+					46.5,
+					22.5
+				],
+				[
+					49.5,
+					12.5
+				],
+				[
+					50.0,
+					17.5
+				],
+				[
+					50.5,
+					22.5
+				],
+				[
+					50.0,
+					22.5
+				],
+				[
+					14.0,
+					22.5
+				],
+				[
+					14.0,
+					12.5
+				]
+			]
+		}
+	]
+}

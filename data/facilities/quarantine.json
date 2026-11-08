@@ -1,0 +1,1099 @@
+{
+	"id": "quarantine",
+	"name_key": "LOC_QUARANTINE",
+	"notes": [
+		"NOTE_QUARANTINE_1",
+		"NOTE_QUARANTINE_2",
+		"NOTE_QUARANTINE_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 4.0
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_QUARANTINE_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				11,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_QUARANTINE_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				21,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_QUARANTINE_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				11,
+				10,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						22.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						11.8
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_QUARANTINE_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				11,
+				8,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						22.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						11.8
+					]
+				}
+			]
+		},
+		{
+			"id": "decon",
+			"name_key": "ROOM_QUARANTINE_DECON",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				8,
+				9
+			],
+			"kind": "security",
+			"tags": [
+				"decon"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						16.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "lab_1",
+			"name_key": "ROOM_QUARANTINE_LAB_1",
+			"level": 0,
+			"rect": [
+				20,
+				2,
+				10,
+				9
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "culture_terminal",
+					"pos": [
+						25.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "lab_2",
+			"name_key": "ROOM_QUARANTINE_LAB_2",
+			"level": 0,
+			"rect": [
+				30,
+				2,
+				10,
+				9
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "culture_terminal",
+					"pos": [
+						35.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "cells",
+			"name_key": "ROOM_QUARANTINE_CELLS",
+			"level": 0,
+			"rect": [
+				40,
+				2,
+				12,
+				9
+			],
+			"kind": "containment",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "containment_console",
+					"tag": "culture_vault",
+					"pos": [
+						46.0,
+						2.4
+					],
+					"face": "s"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						46.0,
+						6.5
+					]
+				}
+			]
+		},
+		{
+			"id": "field_room",
+			"name_key": "ROOM_QUARANTINE_FIELD_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				14,
+				10,
+				7
+			],
+			"kind": "maintenance",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"component_spawn",
+				"tools"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "field_panel",
+					"pos": [
+						12.4,
+						17.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "observation",
+			"name_key": "ROOM_QUARANTINE_OBSERVATION",
+			"level": 0,
+			"rect": [
+				22,
+				14,
+				10,
+				7
+			],
+			"kind": "control",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "burn_radio",
+					"pos": [
+						22.4,
+						17.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "medbay",
+			"name_key": "ROOM_QUARANTINE_MEDBAY",
+			"level": 0,
+			"rect": [
+				32,
+				14,
+				8,
+				7
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_QUARANTINE_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				40,
+				14,
+				8,
+				7
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "middle_extra_2",
+			"name_key": "ROOM_QUARANTINE_MIDDLE_EXTRA_2",
+			"level": 0,
+			"rect": [
+				48,
+				14,
+				4,
+				7
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "generator_room",
+			"name_key": "ROOM_QUARANTINE_GENERATOR_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				24,
+				10,
+				9
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						15.33,
+						30.4
+					],
+					"face": "n"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						18.67,
+						32.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "supplies",
+			"name_key": "ROOM_QUARANTINE_SUPPLIES",
+			"level": 0,
+			"rect": [
+				22,
+				24,
+				10,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "incubators",
+			"name_key": "ROOM_QUARANTINE_INCUBATORS",
+			"level": 0,
+			"rect": [
+				32,
+				24,
+				10,
+				9
+			],
+			"kind": "freezer",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						37.0,
+						28.5
+					]
+				}
+			]
+		},
+		{
+			"id": "offices",
+			"name_key": "ROOM_QUARANTINE_OFFICES",
+			"level": 0,
+			"rect": [
+				42,
+				24,
+				10,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				11
+			],
+			"b": [
+				12,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				11
+			],
+			"b": [
+				52,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				21
+			],
+			"b": [
+				12,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				21
+			],
+			"b": [
+				52,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_decon",
+			"a": [
+				16,
+				10
+			],
+			"b": [
+				16,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_lab_1",
+			"a": [
+				25,
+				10
+			],
+			"b": [
+				25,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_lab_2",
+			"a": [
+				35,
+				10
+			],
+			"b": [
+				35,
+				11
+			]
+		},
+		{
+			"id": "door_lab_1_lab_2",
+			"type": "normal",
+			"lockable": true,
+			"a": [
+				29,
+				6
+			],
+			"b": [
+				30,
+				6
+			]
+		},
+		{
+			"type": "secure",
+			"lockdown": true,
+			"id": "door_cells",
+			"a": [
+				46,
+				10
+			],
+			"b": [
+				46,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_field_room_n",
+			"a": [
+				13,
+				14
+			],
+			"b": [
+				13,
+				13
+			]
+		},
+		{
+			"id": "door_field_room_s",
+			"type": "normal",
+			"a": [
+				20,
+				20
+			],
+			"b": [
+				20,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_observation_n",
+			"a": [
+				23,
+				14
+			],
+			"b": [
+				23,
+				13
+			]
+		},
+		{
+			"id": "door_observation_s",
+			"type": "normal",
+			"a": [
+				30,
+				20
+			],
+			"b": [
+				30,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_medbay_n",
+			"a": [
+				33,
+				14
+			],
+			"b": [
+				33,
+				13
+			]
+		},
+		{
+			"id": "door_medbay_s",
+			"type": "normal",
+			"a": [
+				38,
+				20
+			],
+			"b": [
+				38,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				41,
+				14
+			],
+			"b": [
+				41,
+				13
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				46,
+				20
+			],
+			"b": [
+				46,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_middle_extra_2_n",
+			"a": [
+				49,
+				14
+			],
+			"b": [
+				49,
+				13
+			]
+		},
+		{
+			"id": "door_middle_extra_2_s",
+			"type": "normal",
+			"a": [
+				50,
+				20
+			],
+			"b": [
+				50,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_generator_room",
+			"a": [
+				17,
+				24
+			],
+			"b": [
+				17,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_supplies",
+			"a": [
+				27,
+				24
+			],
+			"b": [
+				27,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_incubators",
+			"a": [
+				37,
+				24
+			],
+			"b": [
+				37,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_offices",
+			"a": [
+				47,
+				24
+			],
+			"b": [
+				47,
+				23
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					12.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					16.0,
+					6.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					25.5,
+					12.5
+				],
+				[
+					25.0,
+					6.5
+				],
+				[
+					25.5,
+					12.5
+				],
+				[
+					35.5,
+					12.5
+				],
+				[
+					35.0,
+					6.5
+				],
+				[
+					35.5,
+					12.5
+				],
+				[
+					46.5,
+					12.5
+				],
+				[
+					46.0,
+					6.5
+				],
+				[
+					46.5,
+					12.5
+				],
+				[
+					51.0,
+					12.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					22.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					17.0,
+					28.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					27.0,
+					28.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					37.5,
+					22.5
+				],
+				[
+					37.0,
+					28.5
+				],
+				[
+					37.5,
+					22.5
+				],
+				[
+					47.5,
+					22.5
+				],
+				[
+					47.0,
+					28.5
+				],
+				[
+					47.5,
+					22.5
+				],
+				[
+					51.0,
+					22.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					12.5
+				],
+				[
+					17.0,
+					17.5
+				],
+				[
+					20.5,
+					22.5
+				],
+				[
+					23.5,
+					12.5
+				],
+				[
+					27.0,
+					17.5
+				],
+				[
+					30.5,
+					22.5
+				],
+				[
+					33.5,
+					12.5
+				],
+				[
+					36.0,
+					17.5
+				],
+				[
+					38.5,
+					22.5
+				],
+				[
+					41.5,
+					12.5
+				],
+				[
+					44.0,
+					17.5
+				],
+				[
+					46.5,
+					22.5
+				],
+				[
+					49.5,
+					12.5
+				],
+				[
+					50.0,
+					17.5
+				],
+				[
+					50.5,
+					22.5
+				],
+				[
+					50.0,
+					22.5
+				],
+				[
+					14.0,
+					22.5
+				],
+				[
+					14.0,
+					12.5
+				]
+			]
+		}
+	]
+}

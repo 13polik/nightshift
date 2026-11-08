@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_0ku36"]
+
+[resource]
+script = ExtResource("1_0ku36")
+id = &"data_drive"
+name_key = "ITEM_DATA_DRIVE"
+description_key = "ITEM_DATA_DRIVE_DESC"
+category = 4
+icon_glyph = "d"
+color = Color(0.4, 0.85, 1, 1)
+max_stack = 3
+tags = PackedStringArray()

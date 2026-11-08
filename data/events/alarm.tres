@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventData" format=3]
+
+[ext_resource type="Script" path="res://scripts/missions/events/alarm_event.gd" id="1_m0ac7"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="2_br8fp"]
+
+[resource]
+script = ExtResource("2_br8fp")
+id = &"alarm"
+name_key = "EVENT_ALARM"
+banner_key = "EVENT_ALARM_BANNER"
+event_script = ExtResource("1_m0ac7")
+weight = 0.9
+min_threat = 0.3
+cooldown = 160.0
+duration = 45.0

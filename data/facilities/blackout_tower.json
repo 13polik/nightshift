@@ -1,0 +1,1085 @@
+{
+	"id": "blackout_tower",
+	"name_key": "LOC_BLACKOUT_TOWER",
+	"notes": [
+		"NOTE_BLACKOUT_TOWER_1",
+		"NOTE_BLACKOUT_TOWER_2",
+		"NOTE_BLACKOUT_TOWER_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 4.0
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_BLACKOUT_TOWER_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				11,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_BLACKOUT_TOWER_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				21,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_BLACKOUT_TOWER_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				11,
+				10,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion",
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						17.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						22.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						11.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						2.8,
+						12.5
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_BLACKOUT_TOWER_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				11,
+				8,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						17.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						22.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						11.8
+					]
+				}
+			]
+		},
+		{
+			"id": "atrium",
+			"name_key": "ROOM_BLACKOUT_TOWER_ATRIUM",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				12,
+				9
+			],
+			"kind": "lobby",
+			"tags": [
+				"atrium"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "open_office",
+			"name_key": "ROOM_BLACKOUT_TOWER_OPEN_OFFICE",
+			"level": 0,
+			"rect": [
+				24,
+				2,
+				14,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "boardroom",
+			"name_key": "ROOM_BLACKOUT_TOWER_BOARDROOM",
+			"level": 0,
+			"rect": [
+				38,
+				2,
+				10,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"general"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						43.0,
+						6.5
+					]
+				}
+			]
+		},
+		{
+			"id": "north_extra_1",
+			"name_key": "ROOM_BLACKOUT_TOWER_NORTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				2,
+				4,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "security",
+			"name_key": "ROOM_BLACKOUT_TOWER_SECURITY",
+			"level": 0,
+			"rect": [
+				12,
+				14,
+				8,
+				7
+			],
+			"kind": "security",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "access_logs",
+					"pos": [
+						12.4,
+						16.33
+					],
+					"face": "e"
+				},
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						12.4,
+						18.67
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "exec_server",
+			"name_key": "ROOM_BLACKOUT_TOWER_EXEC_SERVER",
+			"level": 0,
+			"rect": [
+				20,
+				14,
+				10,
+				7
+			],
+			"kind": "server",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "exec_server",
+					"pos": [
+						20.4,
+						17.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "archive",
+			"name_key": "ROOM_BLACKOUT_TOWER_ARCHIVE",
+			"level": 0,
+			"rect": [
+				30,
+				14,
+				10,
+				7
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"keycard_spawn"
+			],
+			"features": []
+		},
+		{
+			"id": "break_room",
+			"name_key": "ROOM_BLACKOUT_TOWER_BREAK_ROOM",
+			"level": 0,
+			"rect": [
+				40,
+				14,
+				8,
+				7
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "server_terminal",
+					"pos": [
+						40.4,
+						17.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_BLACKOUT_TOWER_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				14,
+				4,
+				7
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "maintenance",
+			"name_key": "ROOM_BLACKOUT_TOWER_MAINTENANCE",
+			"level": 0,
+			"rect": [
+				12,
+				24,
+				10,
+				9
+			],
+			"kind": "maintenance",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"component_spawn",
+				"tools"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						17.0,
+						32.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "storage",
+			"name_key": "ROOM_BLACKOUT_TOWER_STORAGE",
+			"level": 0,
+			"rect": [
+				22,
+				24,
+				10,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "mailroom",
+			"name_key": "ROOM_BLACKOUT_TOWER_MAILROOM",
+			"level": 0,
+			"rect": [
+				32,
+				24,
+				10,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "pickup_phone",
+					"pos": [
+						37.0,
+						32.6
+					],
+					"face": "n"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						37.0,
+						28.5
+					]
+				}
+			]
+		},
+		{
+			"id": "south_extra_1",
+			"name_key": "ROOM_BLACKOUT_TOWER_SOUTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				42,
+				24,
+				10,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				11
+			],
+			"b": [
+				12,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				11
+			],
+			"b": [
+				52,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				21
+			],
+			"b": [
+				12,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				21
+			],
+			"b": [
+				52,
+				21
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_atrium",
+			"a": [
+				18,
+				10
+			],
+			"b": [
+				18,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_open_office",
+			"a": [
+				31,
+				10
+			],
+			"b": [
+				31,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_boardroom",
+			"a": [
+				43,
+				10
+			],
+			"b": [
+				43,
+				11
+			]
+		},
+		{
+			"id": "door_open_office_boardroom",
+			"type": "normal",
+			"lockable": true,
+			"a": [
+				37,
+				6
+			],
+			"b": [
+				38,
+				6
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_north_extra_1",
+			"a": [
+				50,
+				10
+			],
+			"b": [
+				50,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_security_n",
+			"a": [
+				13,
+				14
+			],
+			"b": [
+				13,
+				13
+			]
+		},
+		{
+			"id": "door_security_s",
+			"type": "normal",
+			"a": [
+				18,
+				20
+			],
+			"b": [
+				18,
+				21
+			]
+		},
+		{
+			"type": "secure",
+			"lockdown": true,
+			"id": "door_exec_server_n",
+			"a": [
+				21,
+				14
+			],
+			"b": [
+				21,
+				13
+			]
+		},
+		{
+			"id": "door_exec_server_s",
+			"type": "normal",
+			"a": [
+				28,
+				20
+			],
+			"b": [
+				28,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_archive_n",
+			"a": [
+				31,
+				14
+			],
+			"b": [
+				31,
+				13
+			]
+		},
+		{
+			"id": "door_archive_s",
+			"type": "normal",
+			"a": [
+				38,
+				20
+			],
+			"b": [
+				38,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_break_room_n",
+			"a": [
+				41,
+				14
+			],
+			"b": [
+				41,
+				13
+			]
+		},
+		{
+			"id": "door_break_room_s",
+			"type": "normal",
+			"a": [
+				46,
+				20
+			],
+			"b": [
+				46,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				49,
+				14
+			],
+			"b": [
+				49,
+				13
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				50,
+				20
+			],
+			"b": [
+				50,
+				21
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_maintenance",
+			"a": [
+				17,
+				24
+			],
+			"b": [
+				17,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_storage",
+			"a": [
+				27,
+				24
+			],
+			"b": [
+				27,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_mailroom",
+			"a": [
+				37,
+				24
+			],
+			"b": [
+				37,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_south_extra_1",
+			"a": [
+				47,
+				24
+			],
+			"b": [
+				47,
+				23
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					12.5
+				],
+				[
+					18.5,
+					12.5
+				],
+				[
+					18.0,
+					6.5
+				],
+				[
+					18.5,
+					12.5
+				],
+				[
+					31.5,
+					12.5
+				],
+				[
+					31.0,
+					6.5
+				],
+				[
+					31.5,
+					12.5
+				],
+				[
+					43.5,
+					12.5
+				],
+				[
+					43.0,
+					6.5
+				],
+				[
+					43.5,
+					12.5
+				],
+				[
+					50.5,
+					12.5
+				],
+				[
+					50.0,
+					6.5
+				],
+				[
+					50.5,
+					12.5
+				],
+				[
+					51.0,
+					12.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					22.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					17.0,
+					28.5
+				],
+				[
+					17.5,
+					22.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					27.0,
+					28.5
+				],
+				[
+					27.5,
+					22.5
+				],
+				[
+					37.5,
+					22.5
+				],
+				[
+					37.0,
+					28.5
+				],
+				[
+					37.5,
+					22.5
+				],
+				[
+					47.5,
+					22.5
+				],
+				[
+					47.0,
+					28.5
+				],
+				[
+					47.5,
+					22.5
+				],
+				[
+					51.0,
+					22.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					12.5
+				],
+				[
+					16.0,
+					17.5
+				],
+				[
+					18.5,
+					22.5
+				],
+				[
+					21.5,
+					12.5
+				],
+				[
+					25.0,
+					17.5
+				],
+				[
+					28.5,
+					22.5
+				],
+				[
+					31.5,
+					12.5
+				],
+				[
+					35.0,
+					17.5
+				],
+				[
+					38.5,
+					22.5
+				],
+				[
+					41.5,
+					12.5
+				],
+				[
+					44.0,
+					17.5
+				],
+				[
+					46.5,
+					22.5
+				],
+				[
+					49.5,
+					12.5
+				],
+				[
+					50.0,
+					17.5
+				],
+				[
+					50.5,
+					22.5
+				],
+				[
+					50.0,
+					22.5
+				],
+				[
+					14.0,
+					22.5
+				],
+				[
+					14.0,
+					12.5
+				]
+			]
+		}
+	]
+}

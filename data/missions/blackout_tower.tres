@@ -1,0 +1,172 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="enemy_s"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="hunter"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event_s"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="ev_power_failure"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="ev_lockdown"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="ev_alarm"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="ev_hunter_alert"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="ev_emergency_evacuation"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="ev_generator_noise"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="loot_s"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="obj_s"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="rew_s"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="mis_s"]
+
+[sub_resource type="Resource" id="loot"]
+script = ExtResource("loot_s")
+weights = {
+"access_decoder": 0.8,
+"arc_cell": 1.0,
+"arc_emitter": 0.4,
+"bandage": 3.0,
+"battery": 3.0,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="o_reach_atrium"]
+script = ExtResource("obj_s")
+id = &"reach_atrium"
+title_key = "OBJ_BLACKOUT_TOWER_REACH_ATRIUM"
+hint_key = "OBJ_BLACKOUT_TOWER_REACH_ATRIUM_HINT"
+target_tag = &"atrium"
+threat_on_complete = 0.02
+reward_xp = 40
+
+[sub_resource type="Resource" id="o_power"]
+script = ExtResource("obj_s")
+id = &"power"
+title_key = "OBJ_BLACKOUT_TOWER_POWER"
+hint_key = "OBJ_BLACKOUT_TOWER_POWER_HINT"
+type = 1
+target_tag = &"power_breaker"
+duration = 2.00
+sets_flag = &"power_main"
+threat_on_complete = 0.06
+reward_xp = 70
+
+[sub_resource type="Resource" id="o_access_logs"]
+script = ExtResource("obj_s")
+id = &"access_logs"
+title_key = "OBJ_BLACKOUT_TOWER_ACCESS_LOGS"
+hint_key = "OBJ_BLACKOUT_TOWER_ACCESS_LOGS_HINT"
+type = 1
+target_tag = &"access_logs"
+duration = 6.00
+work_noise = 4.00
+reward_xp = 90
+
+[sub_resource type="Resource" id="o_exec_key"]
+script = ExtResource("obj_s")
+id = &"exec_key"
+title_key = "OBJ_BLACKOUT_TOWER_EXEC_KEY"
+hint_key = "OBJ_BLACKOUT_TOWER_EXEC_KEY_HINT"
+type = 2
+item_pool = PackedStringArray("keycard")
+required_count = 1
+spawn_items_tag = &"keycard_spawn"
+spare_items = 0
+reveal_item_location = true
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_copy_server"]
+script = ExtResource("obj_s")
+id = &"copy_server"
+title_key = "OBJ_BLACKOUT_TOWER_COPY_SERVER"
+hint_key = "OBJ_BLACKOUT_TOWER_COPY_SERVER_HINT"
+type = 1
+target_tag = &"exec_server"
+duration = 10.00
+work_noise = 12.00
+reward_xp = 150
+events_on_start = PackedStringArray("hunter_alert")
+threat_on_complete = 0.10
+
+[sub_resource type="Resource" id="o_backups"]
+script = ExtResource("obj_s")
+id = &"backups"
+title_key = "OBJ_BLACKOUT_TOWER_BACKUPS"
+hint_key = "OBJ_BLACKOUT_TOWER_BACKUPS_HINT"
+type = 2
+item_pool = PackedStringArray("data_drive")
+required_count = 2
+spawn_items_tag = &"research"
+spare_items = 1
+reveal_item_location = true
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_call_evac"]
+script = ExtResource("obj_s")
+id = &"call_evac"
+title_key = "OBJ_BLACKOUT_TOWER_CALL_EVAC"
+hint_key = "OBJ_BLACKOUT_TOWER_CALL_EVAC_HINT"
+type = 1
+target_tag = &"pickup_phone"
+duration = 4.00
+events_on_complete = PackedStringArray("emergency_evacuation")
+threat_on_complete = 0.06
+work_noise = 6.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_survive"]
+script = ExtResource("obj_s")
+id = &"survive"
+title_key = "OBJ_BLACKOUT_TOWER_SURVIVE"
+hint_key = "OBJ_BLACKOUT_TOWER_SURVIVE_HINT"
+type = 4
+duration = 70.00
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_extract"]
+script = ExtResource("obj_s")
+id = &"extract"
+title_key = "OBJ_BLACKOUT_TOWER_EXTRACT"
+hint_key = "OBJ_BLACKOUT_TOWER_EXTRACT_HINT"
+type = 5
+target_tag = &"extraction"
+duration = 90.00
+reward_xp = 0
+
+[sub_resource type="Resource" id="o_opt_server"]
+script = ExtResource("obj_s")
+id = &"opt_server"
+title_key = "OBJ_BLACKOUT_TOWER_OPT_SERVER"
+hint_key = "OBJ_BLACKOUT_TOWER_OPT_SERVER_HINT"
+type = 1
+target_tag = &"server_terminal"
+duration = 8.00
+work_noise = 4.00
+reward_xp = 100
+reward_currency = 25
+optional = true
+
+[sub_resource type="Resource" id="rewards"]
+script = ExtResource("rew_s")
+
+[resource]
+script = ExtResource("mis_s")
+id = &"blackout_tower"
+name_key = "MISSION_BLACKOUT_TOWER"
+description_key = "MISSION_BLACKOUT_TOWER_DESC"
+location_key = "LOC_BLACKOUT_TOWER"
+layout_path = "res://data/facilities/blackout_tower.json"
+objectives = Array[ExtResource("obj_s")]([SubResource("o_reach_atrium"), SubResource("o_power"), SubResource("o_access_logs"), SubResource("o_exec_key"), SubResource("o_copy_server"), SubResource("o_backups"), SubResource("o_call_evac"), SubResource("o_survive"), SubResource("o_extract")])
+optional_objectives = Array[ExtResource("obj_s")]([SubResource("o_opt_server")])
+events = Array[ExtResource("event_s")]([ExtResource("ev_power_failure"), ExtResource("ev_lockdown"), ExtResource("ev_alarm"), ExtResource("ev_hunter_alert"), ExtResource("ev_emergency_evacuation"), ExtResource("ev_generator_noise")])
+loot_table = SubResource("loot")
+rewards = SubResource("rewards")
+enemies = Array[ExtResource("enemy_s")]([ExtResource("hunter")])
+enemy_release_time = 80.0
+recommended_level = 5
+unlock_level = 5
+threat_per_minute = 0.050
+target_duration_minutes = 15.0

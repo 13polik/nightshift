@@ -1,0 +1,270 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_tqktt"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="2_qt657"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="3_rcnrq"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="4_tqktt"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="5_qt657"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="6_rcnrq"]
+[ext_resource type="Resource" path="res://data/events/system_failure.tres" id="7_ru80g"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="8_xi3nb"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="9_ldr5r"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="10_ejs6m"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="11_8ylj0"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="12_crxo7"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="13_ebth3"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="14_u6124"]
+
+[sub_resource type="Resource" id="Resource_i16ep"]
+script = ExtResource("11_8ylj0")
+weights = {
+"access_decoder": 0.5,
+"arc_cell": 1.0,
+"arc_emitter": 0.4,
+"bandage": 3.0,
+"battery": 3.0,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="Resource_ioyxo"]
+script = ExtResource("12_crxo7")
+id = &"enter_facility"
+title_key = "OBJ_ENTER_FACILITY"
+hint_key = "OBJ_ENTER_FACILITY_HINT"
+target_tag = &"security_checkpoint"
+item_pool = PackedStringArray()
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+threat_on_complete = 0.02
+reward_xp = 30
+
+[sub_resource type="Resource" id="Resource_saxxv"]
+script = ExtResource("12_crxo7")
+id = &"locate_maintenance"
+title_key = "OBJ_LOCATE_MAINTENANCE"
+hint_key = "OBJ_LOCATE_MAINTENANCE_HINT"
+target_tag = &"maintenance"
+item_pool = PackedStringArray()
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+reward_xp = 40
+
+[sub_resource type="Resource" id="Resource_8ylj0"]
+script = ExtResource("12_crxo7")
+id = &"find_components"
+title_key = "OBJ_FIND_COMPONENTS"
+hint_key = "OBJ_FIND_COMPONENTS_HINT"
+type = 2
+item_pool = PackedStringArray("fuse", "circuit_board", "capacitor")
+pick_items = 2
+spawn_items_tag = &"component_spawn"
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+reward_xp = 80
+
+[sub_resource type="Resource" id="Resource_crxo7"]
+script = ExtResource("12_crxo7")
+id = &"repair_panel"
+title_key = "OBJ_REPAIR_PANEL"
+hint_key = "OBJ_REPAIR_PANEL_HINT"
+type = 3
+target_tag = &"electrical_panel"
+item_pool = PackedStringArray("@find_components")
+duration = 5.0
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+work_noise = 9.0
+reward_xp = 80
+
+[sub_resource type="Resource" id="Resource_ebth3"]
+script = ExtResource("12_crxo7")
+id = &"start_generator"
+title_key = "OBJ_START_GENERATOR"
+hint_key = "OBJ_START_GENERATOR_HINT"
+type = 1
+target_tag = &"generator"
+item_pool = PackedStringArray()
+duration = 4.0
+sets_flag = &"power_generator"
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray("generator_noise")
+threat_on_complete = 0.08
+work_noise = 16.0
+reward_xp = 80
+
+[sub_resource type="Resource" id="Resource_u6124"]
+script = ExtResource("12_crxo7")
+id = &"restore_power"
+title_key = "OBJ_RESTORE_POWER"
+hint_key = "OBJ_RESTORE_POWER_HINT"
+type = 1
+target_tag = &"power_breaker"
+item_pool = PackedStringArray()
+duration = 2.0
+sets_flag = &"power_main,power_underground"
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+threat_on_complete = 0.08
+reward_xp = 80
+
+[sub_resource type="Resource" id="Resource_uybrp"]
+script = ExtResource("12_crxo7")
+id = &"access_security"
+title_key = "OBJ_ACCESS_SECURITY"
+hint_key = "OBJ_ACCESS_SECURITY_HINT"
+type = 1
+target_tag = &"security_terminal"
+item_pool = PackedStringArray()
+duration = 6.0
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+work_noise = 3.0
+reward_xp = 70
+
+[sub_resource type="Resource" id="Resource_fgc2t"]
+script = ExtResource("12_crxo7")
+id = &"obtain_access"
+title_key = "OBJ_OBTAIN_ACCESS"
+hint_key = "OBJ_OBTAIN_ACCESS_HINT"
+type = 2
+item_pool = PackedStringArray("keycard")
+spawn_items_tag = &"keycard_spawn"
+spare_items = 0
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+reward_xp = 70
+reveal_item_location = true
+
+[sub_resource type="Resource" id="Resource_q1o7k"]
+script = ExtResource("12_crxo7")
+id = &"reach_underground"
+title_key = "OBJ_REACH_UNDERGROUND"
+hint_key = "OBJ_REACH_UNDERGROUND_HINT"
+target_tag = &"underground"
+item_pool = PackedStringArray()
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+threat_on_complete = 0.06
+reward_xp = 80
+
+[sub_resource type="Resource" id="Resource_j8xta"]
+script = ExtResource("12_crxo7")
+id = &"containment"
+title_key = "OBJ_CONTAINMENT"
+hint_key = "OBJ_CONTAINMENT_HINT"
+type = 1
+target_tag = &"containment_console"
+item_pool = PackedStringArray()
+duration = 8.0
+events_on_start = PackedStringArray("hunter_alert")
+events_on_complete = PackedStringArray()
+threat_on_complete = 0.1
+work_noise = 12.0
+reward_xp = 150
+grants_item = &"sample_case"
+
+[sub_resource type="Resource" id="Resource_832kd"]
+script = ExtResource("12_crxo7")
+id = &"secure_sample"
+title_key = "OBJ_SECURE_SAMPLE"
+hint_key = "OBJ_SECURE_SAMPLE_HINT"
+type = 2
+item_pool = PackedStringArray("sample_case")
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+reward_xp = 40
+
+[sub_resource type="Resource" id="Resource_p36ha"]
+script = ExtResource("12_crxo7")
+id = &"call_evac"
+title_key = "OBJ_CALL_EVAC"
+hint_key = "OBJ_CALL_EVAC_HINT"
+type = 1
+target_tag = &"evac_console"
+item_pool = PackedStringArray()
+duration = 3.0
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray("emergency_evacuation")
+reward_xp = 60
+
+[sub_resource type="Resource" id="Resource_vklrn"]
+script = ExtResource("12_crxo7")
+id = &"survive_evac"
+title_key = "OBJ_SURVIVE_EVAC"
+hint_key = "OBJ_SURVIVE_EVAC_HINT"
+type = 4
+item_pool = PackedStringArray()
+duration = 75.0
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+reward_xp = 120
+
+[sub_resource type="Resource" id="Resource_crebc"]
+script = ExtResource("12_crxo7")
+id = &"extract"
+title_key = "OBJ_EXTRACT"
+hint_key = "OBJ_EXTRACT_HINT"
+type = 5
+target_tag = &"extraction"
+item_pool = PackedStringArray()
+duration = 90.0
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+reward_xp = 0
+
+[sub_resource type="Resource" id="Resource_qgjla"]
+script = ExtResource("12_crxo7")
+id = &"opt_research"
+title_key = "OBJ_OPT_RESEARCH"
+hint_key = "OBJ_OPT_RESEARCH_HINT"
+type = 2
+item_pool = PackedStringArray("data_drive")
+required_count = 2
+spawn_items_tag = &"research"
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+reward_xp = 120
+reward_currency = 30
+optional = true
+
+[sub_resource type="Resource" id="Resource_tald6"]
+script = ExtResource("12_crxo7")
+id = &"opt_server"
+title_key = "OBJ_OPT_SERVER"
+hint_key = "OBJ_OPT_SERVER_HINT"
+type = 1
+target_tag = &"server_terminal"
+item_pool = PackedStringArray()
+duration = 8.0
+events_on_start = PackedStringArray()
+events_on_complete = PackedStringArray()
+work_noise = 4.0
+reward_xp = 100
+reward_currency = 25
+optional = true
+
+[sub_resource type="Resource" id="Resource_lyblb"]
+script = ExtResource("13_ebth3")
+
+[resource]
+script = ExtResource("14_u6124")
+id = &"power_restoration"
+name_key = "MISSION_POWER_RESTORATION"
+description_key = "MISSION_POWER_RESTORATION_DESC"
+location_key = "LOC_RESEARCH_FACILITY"
+layout_path = "res://data/facilities/research_facility.json"
+objectives = Array[ExtResource("12_crxo7")]([SubResource("Resource_ioyxo"), SubResource("Resource_saxxv"), SubResource("Resource_8ylj0"), SubResource("Resource_crxo7"), SubResource("Resource_ebth3"), SubResource("Resource_u6124"), SubResource("Resource_uybrp"), SubResource("Resource_fgc2t"), SubResource("Resource_q1o7k"), SubResource("Resource_j8xta"), SubResource("Resource_832kd"), SubResource("Resource_p36ha"), SubResource("Resource_vklrn"), SubResource("Resource_crebc")])
+optional_objectives = Array[ExtResource("12_crxo7")]([SubResource("Resource_qgjla"), SubResource("Resource_tald6")])
+events = Array[ExtResource("3_rcnrq")]([ExtResource("4_tqktt"), ExtResource("5_qt657"), ExtResource("6_rcnrq"), ExtResource("7_ru80g"), ExtResource("8_xi3nb"), ExtResource("9_ldr5r"), ExtResource("10_ejs6m")])
+loot_table = SubResource("Resource_i16ep")
+rewards = SubResource("Resource_lyblb")
+enemies = Array[ExtResource("1_tqktt")]([ExtResource("2_qt657")])
+enemy_release_time = 90.0

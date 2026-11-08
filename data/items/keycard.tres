@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_ldcmm"]
+
+[resource]
+script = ExtResource("1_ldcmm")
+id = &"keycard"
+name_key = "ITEM_KEYCARD"
+description_key = "ITEM_KEYCARD_DESC"
+category = 2
+icon_glyph = "K"
+color = Color(0.3, 0.9, 1, 1)
+consumed_on_use = false
+tags = PackedStringArray()

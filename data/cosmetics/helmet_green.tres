@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CosmeticData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/cosmetic_data.gd" id="1_txy2j"]
+
+[resource]
+script = ExtResource("1_txy2j")
+id = &"helmet_green"
+name_key = "COS_HELMET_GREEN"
+slot = 2
+rarity = 2
+price = 200
+unlock_level = 4
+primary_color = Color(1, 1, 1, 1)
+secondary_color = Color(0.1, 0.11, 0.12, 1)
+accent_color = Color(0.3, 1, 0.4, 1)

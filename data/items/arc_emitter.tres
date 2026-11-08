@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_xnsim"]
+
+[resource]
+script = ExtResource("1_xnsim")
+id = &"arc_emitter"
+name_key = "ITEM_ARC_EMITTER"
+description_key = "ITEM_ARC_EMITTER_DESC"
+category = 1
+icon_glyph = "Z"
+color = Color(0.4, 0.9, 1, 1)
+use_effect = 3
+effect_amount = 4.0
+consumed_on_use = false
+requires_ammo = &"arc_cell"
+tags = PackedStringArray()

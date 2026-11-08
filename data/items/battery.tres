@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_ty74x"]
+
+[resource]
+script = ExtResource("1_ty74x")
+id = &"battery"
+name_key = "ITEM_BATTERY"
+description_key = "ITEM_BATTERY_DESC"
+icon_glyph = "B"
+color = Color(0.5, 1, 0.5, 1)
+max_stack = 3
+use_effect = 2
+use_time = 1.2
+tags = PackedStringArray()

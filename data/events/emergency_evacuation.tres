@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EventData" format=3]
+
+[ext_resource type="Script" path="res://scripts/missions/events/emergency_evacuation_event.gd" id="1_f8mbc"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="2_kwhe6"]
+
+[resource]
+script = ExtResource("2_kwhe6")
+id = &"emergency_evacuation"
+name_key = "EVENT_EMERGENCY_EVACUATION"
+banner_key = "EVENT_EMERGENCY_EVACUATION_BANNER"
+event_script = ExtResource("1_f8mbc")
+weight = 0.0
+cooldown = 9999.0
+duration = 0.0
+random = false
+params = {
+"lockdown_doors": 2,
+"lockdown_time": 25.0
+}

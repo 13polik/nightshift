@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CosmeticData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/cosmetic_data.gd" id="1_512ca"]
+
+[resource]
+script = ExtResource("1_512ca")
+id = &"suit_medic"
+name_key = "COS_SUIT_MEDIC"
+rarity = 2
+price = 250
+unlock_level = 3
+primary_color = Color(0.8, 0.82, 0.82, 1)
+secondary_color = Color(0.6, 0.12, 0.1, 1)
+accent_color = Color(1, 1, 1, 1)

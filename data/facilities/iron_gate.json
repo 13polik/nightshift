@@ -1,0 +1,1021 @@
+{
+	"id": "iron_gate",
+	"name_key": "LOC_IRON_GATE",
+	"notes": [
+		"NOTE_IRON_GATE_1",
+		"NOTE_IRON_GATE_2",
+		"NOTE_IRON_GATE_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 4.0
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_IRON_GATE_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				12,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_IRON_GATE_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				22,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_IRON_GATE_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				12,
+				10,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion",
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						18.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						23.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						12.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						2.8,
+						13.5
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_IRON_GATE_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				12,
+				8,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"exit_yard"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						18.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						23.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						12.8
+					]
+				}
+			]
+		},
+		{
+			"id": "guard_post",
+			"name_key": "ROOM_IRON_GATE_GUARD_POST",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				8,
+				10
+			],
+			"kind": "security",
+			"tags": [
+				"guard_post"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						16.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "block_a",
+			"name_key": "ROOM_IRON_GATE_BLOCK_A",
+			"level": 0,
+			"rect": [
+				20,
+				2,
+				14,
+				10
+			],
+			"kind": "containment",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						27.0,
+						7.0
+					]
+				}
+			]
+		},
+		{
+			"id": "block_c",
+			"name_key": "ROOM_IRON_GATE_BLOCK_C",
+			"level": 0,
+			"rect": [
+				34,
+				2,
+				12,
+				10
+			],
+			"kind": "containment",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "containment_console",
+					"tag": "block_c_console",
+					"pos": [
+						40.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "north_extra_1",
+			"name_key": "ROOM_IRON_GATE_NORTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				46,
+				2,
+				6,
+				10
+			],
+			"kind": "containment",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "mess",
+			"name_key": "ROOM_IRON_GATE_MESS",
+			"level": 0,
+			"rect": [
+				12,
+				15,
+				12,
+				7
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "infirmary",
+			"name_key": "ROOM_IRON_GATE_INFIRMARY",
+			"level": 0,
+			"rect": [
+				24,
+				15,
+				8,
+				7
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "control",
+			"name_key": "ROOM_IRON_GATE_CONTROL",
+			"level": 0,
+			"rect": [
+				32,
+				15,
+				10,
+				7
+			],
+			"kind": "control",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "transfer_terminal",
+					"pos": [
+						32.4,
+						17.33
+					],
+					"face": "e"
+				},
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "prison_radio",
+					"pos": [
+						32.4,
+						19.67
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_IRON_GATE_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				42,
+				15,
+				10,
+				7
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "generator_room",
+			"name_key": "ROOM_IRON_GATE_GENERATOR_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				25,
+				10,
+				9
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						15.33,
+						31.4
+					],
+					"face": "n"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						18.67,
+						33.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "solitary",
+			"name_key": "ROOM_IRON_GATE_SOLITARY",
+			"level": 0,
+			"rect": [
+				22,
+				25,
+				10,
+				9
+			],
+			"kind": "containment",
+			"tags": [
+				"solitary"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"research"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						27.0,
+						29.5
+					]
+				}
+			]
+		},
+		{
+			"id": "warden",
+			"name_key": "ROOM_IRON_GATE_WARDEN",
+			"level": 0,
+			"rect": [
+				32,
+				25,
+				10,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "laundry",
+			"name_key": "ROOM_IRON_GATE_LAUNDRY",
+			"level": 0,
+			"rect": [
+				42,
+				25,
+				10,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				14
+			],
+			"b": [
+				12,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				14
+			],
+			"b": [
+				52,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				24
+			],
+			"b": [
+				12,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				24
+			],
+			"b": [
+				52,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_guard_post",
+			"a": [
+				16,
+				11
+			],
+			"b": [
+				16,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_block_a",
+			"a": [
+				27,
+				11
+			],
+			"b": [
+				27,
+				12
+			]
+		},
+		{
+			"type": "secure",
+			"lockdown": true,
+			"id": "door_block_c",
+			"a": [
+				40,
+				11
+			],
+			"b": [
+				40,
+				12
+			]
+		},
+		{
+			"id": "door_block_a_block_c",
+			"type": "normal",
+			"lockable": true,
+			"a": [
+				33,
+				7
+			],
+			"b": [
+				34,
+				7
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_north_extra_1",
+			"a": [
+				49,
+				11
+			],
+			"b": [
+				49,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_mess_n",
+			"a": [
+				13,
+				15
+			],
+			"b": [
+				13,
+				14
+			]
+		},
+		{
+			"id": "door_mess_s",
+			"type": "normal",
+			"a": [
+				22,
+				21
+			],
+			"b": [
+				22,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_infirmary_n",
+			"a": [
+				25,
+				15
+			],
+			"b": [
+				25,
+				14
+			]
+		},
+		{
+			"id": "door_infirmary_s",
+			"type": "normal",
+			"a": [
+				30,
+				21
+			],
+			"b": [
+				30,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_control_n",
+			"a": [
+				33,
+				15
+			],
+			"b": [
+				33,
+				14
+			]
+		},
+		{
+			"id": "door_control_s",
+			"type": "normal",
+			"a": [
+				40,
+				21
+			],
+			"b": [
+				40,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				43,
+				15
+			],
+			"b": [
+				43,
+				14
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				50,
+				21
+			],
+			"b": [
+				50,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_generator_room",
+			"a": [
+				17,
+				25
+			],
+			"b": [
+				17,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_solitary",
+			"a": [
+				27,
+				25
+			],
+			"b": [
+				27,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_warden",
+			"a": [
+				37,
+				25
+			],
+			"b": [
+				37,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_laundry",
+			"a": [
+				47,
+				25
+			],
+			"b": [
+				47,
+				24
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					13.5
+				],
+				[
+					16.5,
+					13.5
+				],
+				[
+					16.0,
+					7.0
+				],
+				[
+					16.5,
+					13.5
+				],
+				[
+					27.5,
+					13.5
+				],
+				[
+					27.0,
+					7.0
+				],
+				[
+					27.5,
+					13.5
+				],
+				[
+					40.5,
+					13.5
+				],
+				[
+					40.0,
+					7.0
+				],
+				[
+					40.5,
+					13.5
+				],
+				[
+					49.5,
+					13.5
+				],
+				[
+					49.0,
+					7.0
+				],
+				[
+					49.5,
+					13.5
+				],
+				[
+					51.0,
+					13.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					23.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					17.0,
+					29.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					27.5,
+					23.5
+				],
+				[
+					27.0,
+					29.5
+				],
+				[
+					27.5,
+					23.5
+				],
+				[
+					37.5,
+					23.5
+				],
+				[
+					37.0,
+					29.5
+				],
+				[
+					37.5,
+					23.5
+				],
+				[
+					47.5,
+					23.5
+				],
+				[
+					47.0,
+					29.5
+				],
+				[
+					47.5,
+					23.5
+				],
+				[
+					51.0,
+					23.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					13.5
+				],
+				[
+					18.0,
+					18.5
+				],
+				[
+					22.5,
+					23.5
+				],
+				[
+					25.5,
+					13.5
+				],
+				[
+					28.0,
+					18.5
+				],
+				[
+					30.5,
+					23.5
+				],
+				[
+					33.5,
+					13.5
+				],
+				[
+					37.0,
+					18.5
+				],
+				[
+					40.5,
+					23.5
+				],
+				[
+					43.5,
+					13.5
+				],
+				[
+					47.0,
+					18.5
+				],
+				[
+					50.5,
+					23.5
+				],
+				[
+					50.0,
+					23.5
+				],
+				[
+					14.0,
+					23.5
+				],
+				[
+					14.0,
+					13.5
+				]
+			]
+		}
+	]
+}

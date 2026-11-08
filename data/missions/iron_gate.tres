@@ -1,0 +1,184 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="enemy_s"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="hunter"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event_s"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="ev_power_failure"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="ev_lockdown"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="ev_alarm"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="ev_hunter_alert"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="ev_emergency_evacuation"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="ev_generator_noise"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="loot_s"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="obj_s"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="rew_s"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="mis_s"]
+
+[sub_resource type="Resource" id="loot"]
+script = ExtResource("loot_s")
+weights = {
+"access_decoder": 0.4,
+"arc_cell": 1.0,
+"arc_emitter": 0.4,
+"bandage": 3.0,
+"battery": 3.0,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="o_reach_guard"]
+script = ExtResource("obj_s")
+id = &"reach_guard"
+title_key = "OBJ_IRON_GATE_REACH_GUARD"
+hint_key = "OBJ_IRON_GATE_REACH_GUARD_HINT"
+target_tag = &"guard_post"
+threat_on_complete = 0.02
+reward_xp = 40
+
+[sub_resource type="Resource" id="o_generator"]
+script = ExtResource("obj_s")
+id = &"generator"
+title_key = "OBJ_IRON_GATE_GENERATOR"
+hint_key = "OBJ_IRON_GATE_GENERATOR_HINT"
+type = 1
+target_tag = &"generator"
+duration = 4.00
+sets_flag = &"power_generator"
+events_on_complete = PackedStringArray("generator_noise")
+threat_on_complete = 0.08
+work_noise = 16.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_power"]
+script = ExtResource("obj_s")
+id = &"power"
+title_key = "OBJ_IRON_GATE_POWER"
+hint_key = "OBJ_IRON_GATE_POWER_HINT"
+type = 1
+target_tag = &"power_breaker"
+duration = 2.00
+sets_flag = &"power_main"
+threat_on_complete = 0.06
+reward_xp = 70
+
+[sub_resource type="Resource" id="o_transfer_record"]
+script = ExtResource("obj_s")
+id = &"transfer_record"
+title_key = "OBJ_IRON_GATE_TRANSFER_RECORD"
+hint_key = "OBJ_IRON_GATE_TRANSFER_RECORD_HINT"
+type = 1
+target_tag = &"transfer_terminal"
+duration = 6.00
+work_noise = 4.00
+reward_xp = 90
+
+[sub_resource type="Resource" id="o_master_key"]
+script = ExtResource("obj_s")
+id = &"master_key"
+title_key = "OBJ_IRON_GATE_MASTER_KEY"
+hint_key = "OBJ_IRON_GATE_MASTER_KEY_HINT"
+type = 2
+item_pool = PackedStringArray("keycard")
+required_count = 1
+spawn_items_tag = &"keycard_spawn"
+spare_items = 0
+reveal_item_location = true
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_open_block_c"]
+script = ExtResource("obj_s")
+id = &"open_block_c"
+title_key = "OBJ_IRON_GATE_OPEN_BLOCK_C"
+hint_key = "OBJ_IRON_GATE_OPEN_BLOCK_C_HINT"
+type = 1
+target_tag = &"block_c_console"
+duration = 8.00
+work_noise = 14.00
+reward_xp = 140
+events_on_start = PackedStringArray("hunter_alert")
+threat_on_complete = 0.10
+
+[sub_resource type="Resource" id="o_reach_solitary"]
+script = ExtResource("obj_s")
+id = &"reach_solitary"
+title_key = "OBJ_IRON_GATE_REACH_SOLITARY"
+hint_key = "OBJ_IRON_GATE_REACH_SOLITARY_HINT"
+target_tag = &"solitary"
+threat_on_complete = 0.02
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_call_evac"]
+script = ExtResource("obj_s")
+id = &"call_evac"
+title_key = "OBJ_IRON_GATE_CALL_EVAC"
+hint_key = "OBJ_IRON_GATE_CALL_EVAC_HINT"
+type = 1
+target_tag = &"prison_radio"
+duration = 4.00
+events_on_complete = PackedStringArray("emergency_evacuation")
+threat_on_complete = 0.06
+work_noise = 6.00
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_survive"]
+script = ExtResource("obj_s")
+id = &"survive"
+title_key = "OBJ_IRON_GATE_SURVIVE"
+hint_key = "OBJ_IRON_GATE_SURVIVE_HINT"
+type = 4
+duration = 80.00
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_extract"]
+script = ExtResource("obj_s")
+id = &"extract"
+title_key = "OBJ_IRON_GATE_EXTRACT"
+hint_key = "OBJ_IRON_GATE_EXTRACT_HINT"
+type = 5
+target_tag = &"extraction"
+duration = 90.00
+reward_xp = 0
+
+[sub_resource type="Resource" id="o_opt_drives"]
+script = ExtResource("obj_s")
+id = &"opt_drives"
+title_key = "OBJ_IRON_GATE_OPT_DRIVES"
+hint_key = "OBJ_IRON_GATE_OPT_DRIVES_HINT"
+type = 2
+item_pool = PackedStringArray("data_drive")
+required_count = 2
+spawn_items_tag = &"research"
+spare_items = 1
+reveal_item_location = false
+reward_xp = 120
+reward_currency = 30
+optional = true
+
+[sub_resource type="Resource" id="rewards"]
+script = ExtResource("rew_s")
+
+[resource]
+script = ExtResource("mis_s")
+id = &"iron_gate"
+name_key = "MISSION_IRON_GATE"
+description_key = "MISSION_IRON_GATE_DESC"
+location_key = "LOC_IRON_GATE"
+layout_path = "res://data/facilities/iron_gate.json"
+objectives = Array[ExtResource("obj_s")]([SubResource("o_reach_guard"), SubResource("o_generator"), SubResource("o_power"), SubResource("o_transfer_record"), SubResource("o_master_key"), SubResource("o_open_block_c"), SubResource("o_reach_solitary"), SubResource("o_call_evac"), SubResource("o_survive"), SubResource("o_extract")])
+optional_objectives = Array[ExtResource("obj_s")]([SubResource("o_opt_drives")])
+events = Array[ExtResource("event_s")]([ExtResource("ev_power_failure"), ExtResource("ev_lockdown"), ExtResource("ev_alarm"), ExtResource("ev_hunter_alert"), ExtResource("ev_emergency_evacuation"), ExtResource("ev_generator_noise")])
+loot_table = SubResource("loot")
+rewards = SubResource("rewards")
+enemies = Array[ExtResource("enemy_s")]([ExtResource("hunter"), ExtResource("hunter")])
+enemy_release_time = 90.0
+recommended_level = 5
+unlock_level = 5
+threat_per_minute = 0.050
+target_duration_minutes = 17.0

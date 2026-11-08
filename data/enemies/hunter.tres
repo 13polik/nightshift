@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/hunter_brain.gd" id="1_ui05h"]
+[ext_resource type="PackedScene" path="res://assets/creatures/hunter/hunter_visual.tscn" id="9_scene"]
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="2_oes1k"]
+
+[resource]
+script = ExtResource("2_oes1k")
+id = &"hunter"
+scene = ExtResource("9_scene")
+name_key = "ENEMY_HUNTER"
+brain_script = ExtResource("1_ui05h")

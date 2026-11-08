@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CosmeticData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/cosmetic_data.gd" id="1_rfo11"]
+
+[resource]
+script = ExtResource("1_rfo11")
+id = &"flashlight_warm"
+name_key = "COS_FLASHLIGHT_WARM"
+slot = 3
+rarity = 1
+price = 100
+primary_color = Color(1, 1, 1, 1)
+secondary_color = Color(0.1, 0.11, 0.12, 1)
+accent_color = Color(1, 0.8, 0.55, 1)

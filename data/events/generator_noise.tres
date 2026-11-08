@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EventData" format=3]
+
+[ext_resource type="Script" path="res://scripts/missions/events/noise_burst_event.gd" id="1_ugqnn"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="2_4imup"]
+
+[resource]
+script = ExtResource("2_4imup")
+id = &"generator_noise"
+name_key = "EVENT_GENERATOR_NOISE"
+banner_key = "EVENT_GENERATOR_NOISE_BANNER"
+event_script = ExtResource("1_ugqnn")
+weight = 0.0
+cooldown = 30.0
+duration = 0.0
+random = false
+params = {
+"device_tag": "generator",
+"loudness": 45.0
+}

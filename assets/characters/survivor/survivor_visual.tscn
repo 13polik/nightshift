@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/skinned_character_visual.gd" id="1_vis"]
+[ext_resource type="PackedScene" path="res://assets/characters/survivor/survivor.glb" id="2_model"]
+
+[node name="SurvivorVisual" type="Node3D"]
+script = ExtResource("1_vis")
+model_scene = ExtResource("2_model")
+profile = "survivor"
+light_mount = Vector3(0.1, 1.47, -0.19)
+light_mount_bone = "chest"
+stride = 0.75

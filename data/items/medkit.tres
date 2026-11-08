@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_s4x18"]
+
+[resource]
+script = ExtResource("1_s4x18")
+id = &"medkit"
+name_key = "ITEM_MEDKIT"
+description_key = "ITEM_MEDKIT_DESC"
+icon_glyph = "+"
+color = Color(1, 0.35, 0.3, 1)
+use_effect = 1
+effect_amount = 65.0
+use_time = 4.0
+tags = PackedStringArray()

@@ -1,0 +1,1140 @@
+{
+	"id": "overload",
+	"name_key": "LOC_OVERLOAD",
+	"notes": [
+		"NOTE_OVERLOAD_1",
+		"NOTE_OVERLOAD_2",
+		"NOTE_OVERLOAD_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 4.8
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_OVERLOAD_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				12,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_OVERLOAD_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				22,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_OVERLOAD_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				12,
+				10,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion",
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						18.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						23.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						12.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						2.8,
+						13.5
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_OVERLOAD_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				12,
+				8,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						18.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						23.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						12.8
+					]
+				}
+			]
+		},
+		{
+			"id": "control_room",
+			"name_key": "ROOM_OVERLOAD_CONTROL_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				10,
+				10
+			],
+			"kind": "control",
+			"tags": [
+				"control_room"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "core_console",
+					"pos": [
+						15.33,
+						2.4
+					],
+					"face": "s"
+				},
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						18.67,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "turbine_hall",
+			"name_key": "ROOM_OVERLOAD_TURBINE_HALL",
+			"level": 0,
+			"rect": [
+				22,
+				2,
+				16,
+				10
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "turbine_panel",
+					"pos": [
+						30.0,
+						2.4
+					],
+					"face": "s"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						30.0,
+						7.0
+					]
+				}
+			]
+		},
+		{
+			"id": "backup_gen",
+			"name_key": "ROOM_OVERLOAD_BACKUP_GEN",
+			"level": 0,
+			"rect": [
+				38,
+				2,
+				10,
+				10
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						41.33,
+						4.6
+					],
+					"face": "s"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						44.67,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "north_extra_1",
+			"name_key": "ROOM_OVERLOAD_NORTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				2,
+				4,
+				10
+			],
+			"kind": "maintenance",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "coolant_a",
+			"name_key": "ROOM_OVERLOAD_COOLANT_A",
+			"level": 0,
+			"rect": [
+				12,
+				15,
+				10,
+				7
+			],
+			"kind": "pump",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "coolant_valve",
+					"pos": [
+						12.4,
+						18.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "switchgear",
+			"name_key": "ROOM_OVERLOAD_SWITCHGEAR",
+			"level": 0,
+			"rect": [
+				22,
+				15,
+				8,
+				7
+			],
+			"kind": "maintenance",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "coolant_b",
+			"name_key": "ROOM_OVERLOAD_COOLANT_B",
+			"level": 0,
+			"rect": [
+				30,
+				15,
+				10,
+				7
+			],
+			"kind": "pump",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "coolant_valve",
+					"pos": [
+						30.4,
+						18.5
+					],
+					"face": "e"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						35.0,
+						18.5
+					]
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_OVERLOAD_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				40,
+				15,
+				8,
+				7
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "middle_extra_2",
+			"name_key": "ROOM_OVERLOAD_MIDDLE_EXTRA_2",
+			"level": 0,
+			"rect": [
+				48,
+				15,
+				4,
+				7
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "workshop",
+			"name_key": "ROOM_OVERLOAD_WORKSHOP",
+			"level": 0,
+			"rect": [
+				12,
+				25,
+				10,
+				9
+			],
+			"kind": "maintenance",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "stores",
+			"name_key": "ROOM_OVERLOAD_STORES",
+			"level": 0,
+			"rect": [
+				22,
+				25,
+				10,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "server",
+			"name_key": "ROOM_OVERLOAD_SERVER",
+			"level": 0,
+			"rect": [
+				32,
+				25,
+				8,
+				9
+			],
+			"kind": "server",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "server_terminal",
+					"pos": [
+						36.0,
+						33.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "security",
+			"name_key": "ROOM_OVERLOAD_SECURITY",
+			"level": 0,
+			"rect": [
+				40,
+				25,
+				8,
+				9
+			],
+			"kind": "security",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "plant_radio",
+					"pos": [
+						44.0,
+						33.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "south_extra_1",
+			"name_key": "ROOM_OVERLOAD_SOUTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				25,
+				4,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				14
+			],
+			"b": [
+				12,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				14
+			],
+			"b": [
+				52,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				24
+			],
+			"b": [
+				12,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				24
+			],
+			"b": [
+				52,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_control_room",
+			"a": [
+				17,
+				11
+			],
+			"b": [
+				17,
+				12
+			]
+		},
+		{
+			"type": "heavy",
+			"lockdown": true,
+			"id": "door_turbine_hall",
+			"a": [
+				30,
+				11
+			],
+			"b": [
+				30,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_backup_gen",
+			"a": [
+				43,
+				11
+			],
+			"b": [
+				43,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_north_extra_1",
+			"a": [
+				50,
+				11
+			],
+			"b": [
+				50,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_coolant_a_n",
+			"a": [
+				13,
+				15
+			],
+			"b": [
+				13,
+				14
+			]
+		},
+		{
+			"id": "door_coolant_a_s",
+			"type": "normal",
+			"a": [
+				20,
+				21
+			],
+			"b": [
+				20,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_switchgear_n",
+			"a": [
+				23,
+				15
+			],
+			"b": [
+				23,
+				14
+			]
+		},
+		{
+			"id": "door_switchgear_s",
+			"type": "normal",
+			"a": [
+				28,
+				21
+			],
+			"b": [
+				28,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_coolant_b_n",
+			"a": [
+				31,
+				15
+			],
+			"b": [
+				31,
+				14
+			]
+		},
+		{
+			"id": "door_coolant_b_s",
+			"type": "normal",
+			"a": [
+				38,
+				21
+			],
+			"b": [
+				38,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				41,
+				15
+			],
+			"b": [
+				41,
+				14
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				46,
+				21
+			],
+			"b": [
+				46,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_middle_extra_2_n",
+			"a": [
+				49,
+				15
+			],
+			"b": [
+				49,
+				14
+			]
+		},
+		{
+			"id": "door_middle_extra_2_s",
+			"type": "normal",
+			"a": [
+				50,
+				21
+			],
+			"b": [
+				50,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_workshop",
+			"a": [
+				17,
+				25
+			],
+			"b": [
+				17,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_stores",
+			"a": [
+				27,
+				25
+			],
+			"b": [
+				27,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_server",
+			"a": [
+				36,
+				25
+			],
+			"b": [
+				36,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_security",
+			"a": [
+				44,
+				25
+			],
+			"b": [
+				44,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_south_extra_1",
+			"a": [
+				50,
+				25
+			],
+			"b": [
+				50,
+				24
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					13.5
+				],
+				[
+					17.5,
+					13.5
+				],
+				[
+					17.0,
+					7.0
+				],
+				[
+					17.5,
+					13.5
+				],
+				[
+					30.5,
+					13.5
+				],
+				[
+					30.0,
+					7.0
+				],
+				[
+					30.5,
+					13.5
+				],
+				[
+					43.5,
+					13.5
+				],
+				[
+					43.0,
+					7.0
+				],
+				[
+					43.5,
+					13.5
+				],
+				[
+					50.5,
+					13.5
+				],
+				[
+					50.0,
+					7.0
+				],
+				[
+					50.5,
+					13.5
+				],
+				[
+					51.0,
+					13.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					23.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					17.0,
+					29.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					27.5,
+					23.5
+				],
+				[
+					27.0,
+					29.5
+				],
+				[
+					27.5,
+					23.5
+				],
+				[
+					36.5,
+					23.5
+				],
+				[
+					36.0,
+					29.5
+				],
+				[
+					36.5,
+					23.5
+				],
+				[
+					44.5,
+					23.5
+				],
+				[
+					44.0,
+					29.5
+				],
+				[
+					44.5,
+					23.5
+				],
+				[
+					50.5,
+					23.5
+				],
+				[
+					50.0,
+					29.5
+				],
+				[
+					50.5,
+					23.5
+				],
+				[
+					51.0,
+					23.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					13.5
+				],
+				[
+					17.0,
+					18.5
+				],
+				[
+					20.5,
+					23.5
+				],
+				[
+					23.5,
+					13.5
+				],
+				[
+					26.0,
+					18.5
+				],
+				[
+					28.5,
+					23.5
+				],
+				[
+					31.5,
+					13.5
+				],
+				[
+					35.0,
+					18.5
+				],
+				[
+					38.5,
+					23.5
+				],
+				[
+					41.5,
+					13.5
+				],
+				[
+					44.0,
+					18.5
+				],
+				[
+					46.5,
+					23.5
+				],
+				[
+					49.5,
+					13.5
+				],
+				[
+					50.0,
+					18.5
+				],
+				[
+					50.5,
+					23.5
+				],
+				[
+					50.0,
+					23.5
+				],
+				[
+					14.0,
+					23.5
+				],
+				[
+					14.0,
+					13.5
+				]
+			]
+		}
+	]
+}

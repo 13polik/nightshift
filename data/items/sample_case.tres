@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_xs8h2"]
+
+[resource]
+script = ExtResource("1_xs8h2")
+id = &"sample_case"
+name_key = "ITEM_SAMPLE_CASE"
+description_key = "ITEM_SAMPLE_CASE_DESC"
+category = 4
+icon_glyph = "S"
+color = Color(1, 0.75, 0.2, 1)
+tags = PackedStringArray()

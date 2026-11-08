@@ -1,0 +1,107 @@
+{
+	"id": "harbor_depot",
+	"name_key": "LOC_HARBOR_DEPOT",
+	"notes": ["NOTE_H01", "NOTE_H02", "NOTE_H03", "NOTE_H04", "NOTE_H05"],
+	"tile_size": 2.0,
+	"levels": { "0": { "y": 0.0, "height": 4.4 } },
+	"rooms": [
+		{ "id": "gate_yard", "name_key": "ROOM_GATE_YARD", "level": 0, "rect": [30, 32, 12, 5], "kind": "outdoor", "outdoor": true,
+		  "tags": ["insertion"], "power_zone": "exterior",
+		  "features": [
+			{ "type": "spawn_player", "pos": [33.5, 34.5] }, { "type": "spawn_player", "pos": [35.0, 34.5] },
+			{ "type": "spawn_player", "pos": [36.5, 34.5] }, { "type": "spawn_player", "pos": [38.0, 34.5] },
+			{ "type": "prop", "kind": "vehicle", "pos": [40.0, 35.0], "face": "w" },
+			{ "type": "prop", "kind": "barrier", "pos": [31.0, 36.2] }
+		  ] },
+		{ "id": "quay", "name_key": "ROOM_QUAY", "level": 0, "rect": [12, 32, 18, 4], "kind": "outdoor", "outdoor": true,
+		  "tags": ["quay"], "power_zone": "exterior",
+		  "features": [
+			{ "type": "prop", "kind": "crate_stack", "pos": [15.0, 35.2] },
+			{ "type": "prop", "kind": "crate_stack", "pos": [24.5, 35.2] },
+			{ "type": "prop", "kind": "barrel", "pos": [27.0, 35.3] },
+			{ "type": "prop", "kind": "barrier", "pos": [21.0, 35.4] }
+		  ] },
+		{ "id": "pier", "name_key": "ROOM_PIER", "level": 0, "rect": [2, 30, 10, 6], "kind": "dock", "outdoor": true,
+		  "tags": ["extraction"], "power_zone": "exterior",
+		  "features": [
+			{ "type": "prop", "kind": "evac_beacon", "pos": [3.0, 34.5] },
+			{ "type": "prop", "kind": "crate_stack", "pos": [9.5, 30.8] },
+			{ "type": "prop", "kind": "barrel", "pos": [4.0, 30.8] }
+		  ] },
+		{ "id": "checkpoint", "name_key": "ROOM_CHECKPOINT", "level": 0, "rect": [32, 26, 8, 6], "kind": "security",
+		  "tags": ["depot_checkpoint"], "power_zone": "main", "loot_tags": ["general"],
+		  "features": [
+			{ "type": "interactable", "kind": "alarm_panel", "tag": "alarm_panel", "pos": [39.6, 28.0], "face": "w" },
+			{ "type": "prop", "kind": "scanner_gate", "pos": [35.5, 30.0], "face": "s" }
+		  ] },
+		{ "id": "loading_bay", "name_key": "ROOM_LOADING_BAY", "level": 0, "rect": [14, 22, 18, 10], "kind": "storage",
+		  "tags": ["loading_bay"], "power_zone": "main", "loot_tags": ["general", "component_spawn", "tools"] },
+		{ "id": "office", "name_key": "ROOM_HARBOR_OFFICE", "level": 0, "rect": [2, 22, 12, 7], "kind": "office",
+		  "tags": ["offices"], "power_zone": "main", "loot_tags": ["general", "medical", "research"],
+		  "features": [ { "type": "interactable", "kind": "terminal", "tag": "server_terminal", "pos": [2.4, 25.0], "face": "e" } ] },
+		{ "id": "maintenance", "name_key": "ROOM_MAINTENANCE", "level": 0, "rect": [32, 22, 10, 4], "kind": "maintenance",
+		  "tags": ["maintenance"], "power_zone": "main", "loot_tags": ["component_spawn", "tools"] },
+		{ "id": "corridor", "name_key": "ROOM_SERVICE_CORRIDOR", "level": 0, "rect": [2, 19, 40, 3], "kind": "corridor",
+		  "tags": ["corridor"], "power_zone": "main", "loot_tags": ["general"] },
+		{ "id": "freezer_a", "name_key": "ROOM_COLD_STORAGE_A", "level": 0, "rect": [2, 8, 14, 11], "kind": "freezer",
+		  "tags": ["cold_storage"], "power_zone": "main", "loot_tags": ["general", "component_spawn"],
+		  "features": [ { "type": "interactable", "kind": "terminal", "tag": "team_terminal", "pos": [2.4, 13.0], "face": "e" } ] },
+		{ "id": "freezer_b", "name_key": "ROOM_COLD_STORAGE_B", "level": 0, "rect": [16, 8, 12, 11], "kind": "freezer",
+		  "tags": ["cold_storage"], "power_zone": "main", "loot_tags": ["general", "research"],
+		  "features": [
+			{ "type": "interactable", "kind": "terminal", "tag": "team_terminal", "pos": [27.6, 13.0], "face": "w" },
+			{ "type": "enemy_spawn", "pos": [22.0, 10.0] }
+		  ] },
+		{ "id": "generator_room", "name_key": "ROOM_GENERATOR", "level": 0, "rect": [28, 8, 8, 11], "kind": "generator",
+		  "tags": ["generator_room"], "power_zone": "generator", "loot_tags": ["tools", "component_spawn"],
+		  "features": [
+			{ "type": "interactable", "kind": "generator", "tag": "generator", "pos": [32.0, 11.5], "face": "s" },
+			{ "type": "interactable", "kind": "breaker", "tag": "power_breaker", "pos": [28.4, 16.0], "face": "e" }
+		  ] },
+		{ "id": "radio_room", "name_key": "ROOM_RADIO", "level": 0, "rect": [36, 8, 6, 11], "kind": "control",
+		  "tags": ["radio_room"], "power_zone": "main", "loot_tags": ["general"],
+		  "features": [ { "type": "interactable", "kind": "terminal", "tag": "radio_console", "pos": [39.0, 8.4], "face": "s" } ] },
+		{ "id": "mast_yard", "name_key": "ROOM_MAST_YARD", "level": 0, "rect": [42, 8, 8, 8], "kind": "outdoor", "outdoor": true,
+		  "tags": ["mast"], "power_zone": "exterior",
+		  "features": [
+			{ "type": "interactable", "kind": "electrical_panel", "tag": "mast_panel", "pos": [49.6, 11.5], "face": "w" },
+			{ "type": "prop", "kind": "evac_beacon", "pos": [46.0, 9.0] },
+			{ "type": "prop", "kind": "barrier", "pos": [44.0, 15.3] }
+		  ] },
+		{ "id": "first_aid", "name_key": "ROOM_FIRST_AID", "level": 0, "rect": [42, 16, 8, 6], "kind": "medical",
+		  "tags": ["medical"], "power_zone": "main", "loot_tags": ["medical"] }
+	],
+	"doors": [
+		{ "a": [35, 32], "b": [35, 31], "type": "open" },
+		{ "a": [36, 32], "b": [36, 31], "type": "open" },
+		{ "a": [30, 33], "b": [29, 33], "type": "open" },
+		{ "a": [30, 34], "b": [29, 34], "type": "open" },
+		{ "a": [12, 33], "b": [11, 33], "type": "open" },
+		{ "a": [12, 34], "b": [11, 34], "type": "open" },
+		{ "a": [18, 32], "b": [18, 31], "type": "open" },
+		{ "a": [19, 32], "b": [19, 31], "type": "open" },
+		{ "id": "door_bay_s", "a": [26, 32], "b": [26, 31], "type": "normal", "lockdown": true },
+		{ "id": "door_cp_bay", "a": [32, 28], "b": [31, 28], "type": "normal", "lockdown": true },
+		{ "id": "door_cp_maint", "a": [36, 26], "b": [36, 25], "type": "normal" },
+		{ "id": "door_maint_n", "a": [37, 22], "b": [37, 21], "type": "normal", "lockdown": true },
+		{ "id": "door_maint_bay", "a": [32, 23], "b": [31, 23], "type": "normal", "lockable": true },
+		{ "id": "door_bay_n", "a": [22, 22], "b": [22, 21], "type": "normal", "lockdown": true },
+		{ "a": [27, 22], "b": [27, 21], "type": "open" },
+		{ "id": "door_office_bay", "a": [14, 25], "b": [13, 25], "type": "normal" },
+		{ "id": "door_office_n", "a": [8, 22], "b": [8, 21], "type": "normal", "lockdown": true },
+		{ "id": "door_freezer_a", "a": [9, 19], "b": [9, 18], "type": "heavy", "lockdown": true },
+		{ "id": "door_freezer_b", "a": [21, 19], "b": [21, 18], "type": "heavy", "lockdown": true },
+		{ "id": "door_freezer_link", "a": [15, 12], "b": [16, 12], "type": "normal", "lockable": true },
+		{ "id": "door_generator", "a": [31, 19], "b": [31, 18], "type": "normal", "lockdown": true },
+		{ "id": "door_gen_radio", "a": [35, 12], "b": [36, 12], "type": "normal", "lockable": true },
+		{ "id": "door_radio", "a": [39, 19], "b": [39, 18], "type": "normal", "lockdown": true },
+		{ "id": "door_mast", "a": [41, 11], "b": [42, 11], "type": "heavy" },
+		{ "id": "door_first_aid", "a": [41, 20], "b": [42, 20], "type": "normal" },
+		{ "id": "door_aid_mast", "a": [46, 16], "b": [46, 15], "type": "normal", "lockable": true }
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{ "id": "depot_loop", "level": 0, "points": [[5, 20], [20, 20], [38, 20], [37, 23.5], [36, 28], [28, 27], [20, 27], [16, 25], [8, 25], [8, 20], [9, 13], [15.5, 12], [21, 13], [21, 20], [31, 20], [32, 15], [38.5, 13], [39, 20]] },
+		{ "id": "outer_sweep", "level": 0, "points": [[38, 20], [45, 19], [46, 12], [44, 10], [39, 12], [32, 14], [31, 20], [22, 20], [22, 28], [19, 33.5], [7, 33], [24, 33.5], [36, 34]] }
+	]
+}

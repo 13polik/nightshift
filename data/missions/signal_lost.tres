@@ -1,0 +1,186 @@
+[gd_resource type="Resource" script_class="MissionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_enm"]
+[ext_resource type="Resource" path="res://data/enemies/hunter.tres" id="2_hunter"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="3_evt"]
+[ext_resource type="Resource" path="res://data/events/power_failure.tres" id="4_pf"]
+[ext_resource type="Resource" path="res://data/events/lockdown.tres" id="5_ld"]
+[ext_resource type="Resource" path="res://data/events/alarm.tres" id="6_al"]
+[ext_resource type="Resource" path="res://data/events/hunter_alert.tres" id="7_ha"]
+[ext_resource type="Resource" path="res://data/events/emergency_evacuation.tres" id="8_ev"]
+[ext_resource type="Resource" path="res://data/events/generator_noise.tres" id="9_gn"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="10_loot"]
+[ext_resource type="Script" path="res://scripts/data/objective_data.gd" id="11_obj"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="12_rew"]
+[ext_resource type="Script" path="res://scripts/data/mission_data.gd" id="13_mis"]
+
+[sub_resource type="Resource" id="loot"]
+script = ExtResource("10_loot")
+weights = {
+"access_decoder": 0.4,
+"arc_cell": 1.2,
+"arc_emitter": 0.5,
+"bandage": 3.0,
+"battery": 3.5,
+"crowbar": 0.6,
+"medkit": 1.0
+}
+guaranteed = {
+"arc_emitter": 1,
+"battery": 2,
+"crowbar": 1
+}
+fill_ratio = 0.4
+container_fill_ratio = 0.55
+
+[sub_resource type="Resource" id="o_enter"]
+script = ExtResource("11_obj")
+id = &"enter_depot"
+title_key = "OBJ_ENTER_DEPOT"
+hint_key = "OBJ_ENTER_DEPOT_HINT"
+target_tag = &"depot_checkpoint"
+threat_on_complete = 0.02
+reward_xp = 30
+
+[sub_resource type="Resource" id="o_gen"]
+script = ExtResource("11_obj")
+id = &"start_generator"
+title_key = "OBJ_START_GENERATOR"
+hint_key = "OBJ_DEPOT_GENERATOR_HINT"
+type = 1
+target_tag = &"generator"
+duration = 4.0
+sets_flag = &"power_generator"
+events_on_complete = PackedStringArray("generator_noise")
+threat_on_complete = 0.08
+work_noise = 16.0
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_power"]
+script = ExtResource("11_obj")
+id = &"restore_power"
+title_key = "OBJ_RESTORE_POWER"
+hint_key = "OBJ_DEPOT_POWER_HINT"
+type = 1
+target_tag = &"power_breaker"
+duration = 2.0
+sets_flag = &"power_main"
+threat_on_complete = 0.06
+reward_xp = 70
+
+[sub_resource type="Resource" id="o_team"]
+script = ExtResource("11_obj")
+id = &"find_team_log"
+title_key = "OBJ_FIND_TEAM_LOG"
+hint_key = "OBJ_FIND_TEAM_LOG_HINT"
+type = 1
+target_tag = &"team_terminal"
+duration = 6.0
+events_on_start = PackedStringArray("power_failure")
+threat_on_complete = 0.06
+work_noise = 3.0
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_parts"]
+script = ExtResource("11_obj")
+id = &"find_components"
+title_key = "OBJ_FIND_RADIO_PARTS"
+hint_key = "OBJ_FIND_RADIO_PARTS_HINT"
+type = 2
+item_pool = PackedStringArray("fuse", "circuit_board", "capacitor")
+pick_items = 2
+spawn_items_tag = &"component_spawn"
+reward_xp = 80
+
+[sub_resource type="Resource" id="o_mast"]
+script = ExtResource("11_obj")
+id = &"repair_mast"
+title_key = "OBJ_REPAIR_MAST"
+hint_key = "OBJ_REPAIR_MAST_HINT"
+type = 3
+target_tag = &"mast_panel"
+item_pool = PackedStringArray("@find_components")
+duration = 6.0
+threat_on_complete = 0.08
+work_noise = 12.0
+reward_xp = 100
+
+[sub_resource type="Resource" id="o_signal"]
+script = ExtResource("11_obj")
+id = &"send_signal"
+title_key = "OBJ_SEND_SIGNAL"
+hint_key = "OBJ_SEND_SIGNAL_HINT"
+type = 1
+target_tag = &"radio_console"
+duration = 10.0
+events_on_start = PackedStringArray("hunter_alert")
+events_on_complete = PackedStringArray("emergency_evacuation")
+threat_on_complete = 0.1
+work_noise = 14.0
+reward_xp = 150
+
+[sub_resource type="Resource" id="o_survive"]
+script = ExtResource("11_obj")
+id = &"survive_boat"
+title_key = "OBJ_SURVIVE_BOAT"
+hint_key = "OBJ_SURVIVE_BOAT_HINT"
+type = 4
+duration = 70.0
+reward_xp = 120
+
+[sub_resource type="Resource" id="o_extract"]
+script = ExtResource("11_obj")
+id = &"extract"
+title_key = "OBJ_EXTRACT_BOAT"
+hint_key = "OBJ_EXTRACT_BOAT_HINT"
+type = 5
+target_tag = &"extraction"
+duration = 90.0
+reward_xp = 0
+
+[sub_resource type="Resource" id="opt_research"]
+script = ExtResource("11_obj")
+id = &"opt_research"
+title_key = "OBJ_OPT_MANIFESTS"
+hint_key = "OBJ_OPT_MANIFESTS_HINT"
+type = 2
+item_pool = PackedStringArray("data_drive")
+required_count = 2
+spawn_items_tag = &"research"
+reward_xp = 120
+reward_currency = 30
+optional = true
+
+[sub_resource type="Resource" id="opt_server"]
+script = ExtResource("11_obj")
+id = &"opt_server"
+title_key = "OBJ_OPT_SHIPPING_LOGS"
+hint_key = "OBJ_OPT_SHIPPING_LOGS_HINT"
+type = 1
+target_tag = &"server_terminal"
+duration = 8.0
+work_noise = 4.0
+reward_xp = 100
+reward_currency = 25
+optional = true
+
+[sub_resource type="Resource" id="rewards"]
+script = ExtResource("12_rew")
+
+[resource]
+script = ExtResource("13_mis")
+id = &"signal_lost"
+name_key = "MISSION_SIGNAL_LOST"
+description_key = "MISSION_SIGNAL_LOST_DESC"
+location_key = "LOC_HARBOR_DEPOT"
+layout_path = "res://data/facilities/harbor_depot.json"
+objectives = Array[ExtResource("11_obj")]([SubResource("o_enter"), SubResource("o_gen"), SubResource("o_power"), SubResource("o_team"), SubResource("o_parts"), SubResource("o_mast"), SubResource("o_signal"), SubResource("o_survive"), SubResource("o_extract")])
+optional_objectives = Array[ExtResource("11_obj")]([SubResource("opt_research"), SubResource("opt_server")])
+events = Array[ExtResource("3_evt")]([ExtResource("4_pf"), ExtResource("5_ld"), ExtResource("6_al"), ExtResource("7_ha"), ExtResource("8_ev"), ExtResource("9_gn")])
+loot_table = SubResource("loot")
+rewards = SubResource("rewards")
+enemies = Array[ExtResource("1_enm")]([ExtResource("2_hunter")])
+enemy_release_time = 80.0
+recommended_level = 2
+threat_per_minute = 0.05
+target_duration_minutes = 14.0

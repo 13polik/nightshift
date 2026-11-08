@@ -1,0 +1,1093 @@
+{
+	"id": "deep_archive",
+	"name_key": "LOC_DEEP_ARCHIVE",
+	"notes": [
+		"NOTE_DEEP_ARCHIVE_1",
+		"NOTE_DEEP_ARCHIVE_2",
+		"NOTE_DEEP_ARCHIVE_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 4.0
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_DEEP_ARCHIVE_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				12,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_DEEP_ARCHIVE_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				23,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_DEEP_ARCHIVE_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				12,
+				10,
+				14
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion",
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						19.0
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						19.0
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						19.0
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						19.0
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						24.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						12.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						2.8,
+						13.5
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_DEEP_ARCHIVE_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				12,
+				8,
+				14
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"exit_yard"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						19.0
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						24.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						12.8
+					]
+				}
+			]
+		},
+		{
+			"id": "reading_room",
+			"name_key": "ROOM_DEEP_ARCHIVE_READING_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				12,
+				10
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"medical"
+			],
+			"features": []
+		},
+		{
+			"id": "stacks_a",
+			"name_key": "ROOM_DEEP_ARCHIVE_STACKS_A",
+			"level": 0,
+			"rect": [
+				24,
+				2,
+				12,
+				10
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						30.0,
+						7.0
+					]
+				}
+			]
+		},
+		{
+			"id": "stacks_b",
+			"name_key": "ROOM_DEEP_ARCHIVE_STACKS_B",
+			"level": 0,
+			"rect": [
+				36,
+				2,
+				12,
+				10
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "north_extra_1",
+			"name_key": "ROOM_DEEP_ARCHIVE_NORTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				2,
+				4,
+				10
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"medical"
+			],
+			"features": []
+		},
+		{
+			"id": "security",
+			"name_key": "ROOM_DEEP_ARCHIVE_SECURITY",
+			"level": 0,
+			"rect": [
+				12,
+				15,
+				8,
+				8
+			],
+			"kind": "security",
+			"tags": [
+				"archive_security"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "lockdown_terminal",
+					"pos": [
+						12.4,
+						17.67
+					],
+					"face": "e"
+				},
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						12.4,
+						20.33
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "catalogue",
+			"name_key": "ROOM_DEEP_ARCHIVE_CATALOGUE",
+			"level": 0,
+			"rect": [
+				20,
+				15,
+				10,
+				8
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": []
+		},
+		{
+			"id": "vault",
+			"name_key": "ROOM_DEEP_ARCHIVE_VAULT",
+			"level": 0,
+			"rect": [
+				30,
+				15,
+				10,
+				8
+			],
+			"kind": "server",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "vault_terminal",
+					"pos": [
+						30.4,
+						19.0
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "restoration",
+			"name_key": "ROOM_DEEP_ARCHIVE_RESTORATION",
+			"level": 0,
+			"rect": [
+				40,
+				15,
+				8,
+				8
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "server_terminal",
+					"pos": [
+						40.4,
+						19.0
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_DEEP_ARCHIVE_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				15,
+				4,
+				8
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "plant",
+			"name_key": "ROOM_DEEP_ARCHIVE_PLANT",
+			"level": 0,
+			"rect": [
+				12,
+				26,
+				10,
+				9
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						15.33,
+						32.4
+					],
+					"face": "n"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						18.67,
+						34.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "deep_stacks",
+			"name_key": "ROOM_DEEP_ARCHIVE_DEEP_STACKS",
+			"level": 0,
+			"rect": [
+				22,
+				26,
+				14,
+				9
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						29.0,
+						30.5
+					]
+				}
+			]
+		},
+		{
+			"id": "offices",
+			"name_key": "ROOM_DEEP_ARCHIVE_OFFICES",
+			"level": 0,
+			"rect": [
+				36,
+				26,
+				8,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "dock_phone",
+					"pos": [
+						40.0,
+						34.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "south_extra_1",
+			"name_key": "ROOM_DEEP_ARCHIVE_SOUTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				44,
+				26,
+				8,
+				9
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"medical"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				14
+			],
+			"b": [
+				12,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				14
+			],
+			"b": [
+				52,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				24
+			],
+			"b": [
+				12,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				24
+			],
+			"b": [
+				52,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				25
+			],
+			"b": [
+				12,
+				25
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				25
+			],
+			"b": [
+				52,
+				25
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_reading_room",
+			"a": [
+				18,
+				11
+			],
+			"b": [
+				18,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_stacks_a",
+			"a": [
+				30,
+				11
+			],
+			"b": [
+				30,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_stacks_b",
+			"a": [
+				42,
+				11
+			],
+			"b": [
+				42,
+				12
+			]
+		},
+		{
+			"id": "door_stacks_a_stacks_b",
+			"type": "normal",
+			"lockable": true,
+			"a": [
+				35,
+				7
+			],
+			"b": [
+				36,
+				7
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_north_extra_1",
+			"a": [
+				50,
+				11
+			],
+			"b": [
+				50,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_security_n",
+			"a": [
+				13,
+				15
+			],
+			"b": [
+				13,
+				14
+			]
+		},
+		{
+			"id": "door_security_s",
+			"type": "normal",
+			"a": [
+				18,
+				22
+			],
+			"b": [
+				18,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_catalogue_n",
+			"a": [
+				21,
+				15
+			],
+			"b": [
+				21,
+				14
+			]
+		},
+		{
+			"id": "door_catalogue_s",
+			"type": "normal",
+			"a": [
+				28,
+				22
+			],
+			"b": [
+				28,
+				23
+			]
+		},
+		{
+			"type": "secure",
+			"lockdown": true,
+			"id": "door_vault_n",
+			"a": [
+				31,
+				15
+			],
+			"b": [
+				31,
+				14
+			]
+		},
+		{
+			"id": "door_vault_s",
+			"type": "normal",
+			"a": [
+				38,
+				22
+			],
+			"b": [
+				38,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_restoration_n",
+			"a": [
+				41,
+				15
+			],
+			"b": [
+				41,
+				14
+			]
+		},
+		{
+			"id": "door_restoration_s",
+			"type": "normal",
+			"a": [
+				46,
+				22
+			],
+			"b": [
+				46,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				49,
+				15
+			],
+			"b": [
+				49,
+				14
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				50,
+				22
+			],
+			"b": [
+				50,
+				23
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_plant",
+			"a": [
+				17,
+				26
+			],
+			"b": [
+				17,
+				25
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_deep_stacks",
+			"a": [
+				29,
+				26
+			],
+			"b": [
+				29,
+				25
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_offices",
+			"a": [
+				40,
+				26
+			],
+			"b": [
+				40,
+				25
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_south_extra_1",
+			"a": [
+				48,
+				26
+			],
+			"b": [
+				48,
+				25
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					13.5
+				],
+				[
+					18.5,
+					13.5
+				],
+				[
+					18.0,
+					7.0
+				],
+				[
+					18.5,
+					13.5
+				],
+				[
+					30.5,
+					13.5
+				],
+				[
+					30.0,
+					7.0
+				],
+				[
+					30.5,
+					13.5
+				],
+				[
+					42.5,
+					13.5
+				],
+				[
+					42.0,
+					7.0
+				],
+				[
+					42.5,
+					13.5
+				],
+				[
+					50.5,
+					13.5
+				],
+				[
+					50.0,
+					7.0
+				],
+				[
+					50.5,
+					13.5
+				],
+				[
+					51.0,
+					13.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					24.5
+				],
+				[
+					17.5,
+					24.5
+				],
+				[
+					17.0,
+					30.5
+				],
+				[
+					17.5,
+					24.5
+				],
+				[
+					29.5,
+					24.5
+				],
+				[
+					29.0,
+					30.5
+				],
+				[
+					29.5,
+					24.5
+				],
+				[
+					40.5,
+					24.5
+				],
+				[
+					40.0,
+					30.5
+				],
+				[
+					40.5,
+					24.5
+				],
+				[
+					48.5,
+					24.5
+				],
+				[
+					48.0,
+					30.5
+				],
+				[
+					48.5,
+					24.5
+				],
+				[
+					51.0,
+					24.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					13.5
+				],
+				[
+					16.0,
+					19.0
+				],
+				[
+					18.5,
+					24.5
+				],
+				[
+					21.5,
+					13.5
+				],
+				[
+					25.0,
+					19.0
+				],
+				[
+					28.5,
+					24.5
+				],
+				[
+					31.5,
+					13.5
+				],
+				[
+					35.0,
+					19.0
+				],
+				[
+					38.5,
+					24.5
+				],
+				[
+					41.5,
+					13.5
+				],
+				[
+					44.0,
+					19.0
+				],
+				[
+					46.5,
+					24.5
+				],
+				[
+					49.5,
+					13.5
+				],
+				[
+					50.0,
+					19.0
+				],
+				[
+					50.5,
+					24.5
+				],
+				[
+					50.0,
+					24.5
+				],
+				[
+					14.0,
+					24.5
+				],
+				[
+					14.0,
+					13.5
+				]
+			]
+		}
+	]
+}

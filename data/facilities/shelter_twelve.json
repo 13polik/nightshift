@@ -1,0 +1,1041 @@
+{
+	"id": "shelter_twelve",
+	"name_key": "LOC_SHELTER_TWELVE",
+	"notes": [
+		"NOTE_SHELTER_TWELVE_1",
+		"NOTE_SHELTER_TWELVE_2",
+		"NOTE_SHELTER_TWELVE_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 3.6
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_SHELTER_TWELVE_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				11,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_SHELTER_TWELVE_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				22,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_SHELTER_TWELVE_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				11,
+				10,
+				14
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion",
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						18.0
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						18.0
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						18.0
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						18.0
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						23.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						11.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						2.8,
+						12.5
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_SHELTER_TWELVE_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				11,
+				8,
+				14
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"exit_yard"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						18.0
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						23.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						11.8
+					]
+				}
+			]
+		},
+		{
+			"id": "airlock",
+			"name_key": "ROOM_SHELTER_TWELVE_AIRLOCK",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				8,
+				9
+			],
+			"kind": "security",
+			"tags": [
+				"airlock"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						14.67,
+						2.4
+					],
+					"face": "s"
+				},
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "blast_door",
+					"pos": [
+						17.33,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "dorm_a",
+			"name_key": "ROOM_SHELTER_TWELVE_DORM_A",
+			"level": 0,
+			"rect": [
+				20,
+				2,
+				14,
+				9
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						27.0,
+						6.5
+					]
+				}
+			]
+		},
+		{
+			"id": "dorm_b",
+			"name_key": "ROOM_SHELTER_TWELVE_DORM_B",
+			"level": 0,
+			"rect": [
+				34,
+				2,
+				12,
+				9
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "north_extra_1",
+			"name_key": "ROOM_SHELTER_TWELVE_NORTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				46,
+				2,
+				6,
+				9
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": []
+		},
+		{
+			"id": "filters",
+			"name_key": "ROOM_SHELTER_TWELVE_FILTERS",
+			"level": 0,
+			"rect": [
+				12,
+				14,
+				12,
+				8
+			],
+			"kind": "pump",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "air_filters",
+					"pos": [
+						12.4,
+						18.0
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "command",
+			"name_key": "ROOM_SHELTER_TWELVE_COMMAND",
+			"level": 0,
+			"rect": [
+				24,
+				14,
+				10,
+				8
+			],
+			"kind": "control",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "roster_terminal",
+					"pos": [
+						24.4,
+						18.0
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "infirmary",
+			"name_key": "ROOM_SHELTER_TWELVE_INFIRMARY",
+			"level": 0,
+			"rect": [
+				34,
+				14,
+				10,
+				8
+			],
+			"kind": "medical",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"medical",
+				"general"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						39.0,
+						18.0
+					]
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_SHELTER_TWELVE_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				44,
+				14,
+				8,
+				8
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "generator_room",
+			"name_key": "ROOM_SHELTER_TWELVE_GENERATOR_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				25,
+				10,
+				9
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						15.33,
+						31.4
+					],
+					"face": "n"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						18.67,
+						33.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "food_store",
+			"name_key": "ROOM_SHELTER_TWELVE_FOOD_STORE",
+			"level": 0,
+			"rect": [
+				22,
+				25,
+				10,
+				9
+			],
+			"kind": "freezer",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn"
+			],
+			"features": []
+		},
+		{
+			"id": "armoury",
+			"name_key": "ROOM_SHELTER_TWELVE_ARMOURY",
+			"level": 0,
+			"rect": [
+				32,
+				25,
+				8,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools",
+				"component_spawn",
+				"keycard_spawn"
+			],
+			"features": []
+		},
+		{
+			"id": "records",
+			"name_key": "ROOM_SHELTER_TWELVE_RECORDS",
+			"level": 0,
+			"rect": [
+				40,
+				25,
+				12,
+				9
+			],
+			"kind": "archive",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"research",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "server_terminal",
+					"pos": [
+						46.0,
+						33.6
+					],
+					"face": "n"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						46.0,
+						29.5
+					]
+				}
+			]
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				11
+			],
+			"b": [
+				12,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				11
+			],
+			"b": [
+				52,
+				11
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				24
+			],
+			"b": [
+				12,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				24
+			],
+			"b": [
+				52,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_airlock",
+			"a": [
+				16,
+				10
+			],
+			"b": [
+				16,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_dorm_a",
+			"a": [
+				27,
+				10
+			],
+			"b": [
+				27,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_dorm_b",
+			"a": [
+				40,
+				10
+			],
+			"b": [
+				40,
+				11
+			]
+		},
+		{
+			"id": "door_dorm_a_dorm_b",
+			"type": "normal",
+			"lockable": true,
+			"a": [
+				33,
+				6
+			],
+			"b": [
+				34,
+				6
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_north_extra_1",
+			"a": [
+				49,
+				10
+			],
+			"b": [
+				49,
+				11
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_filters_n",
+			"a": [
+				13,
+				14
+			],
+			"b": [
+				13,
+				13
+			]
+		},
+		{
+			"id": "door_filters_s",
+			"type": "normal",
+			"a": [
+				22,
+				21
+			],
+			"b": [
+				22,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_command_n",
+			"a": [
+				25,
+				14
+			],
+			"b": [
+				25,
+				13
+			]
+		},
+		{
+			"id": "door_command_s",
+			"type": "normal",
+			"a": [
+				32,
+				21
+			],
+			"b": [
+				32,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_infirmary_n",
+			"a": [
+				35,
+				14
+			],
+			"b": [
+				35,
+				13
+			]
+		},
+		{
+			"id": "door_infirmary_s",
+			"type": "normal",
+			"a": [
+				42,
+				21
+			],
+			"b": [
+				42,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				45,
+				14
+			],
+			"b": [
+				45,
+				13
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				50,
+				21
+			],
+			"b": [
+				50,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_generator_room",
+			"a": [
+				17,
+				25
+			],
+			"b": [
+				17,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_food_store",
+			"a": [
+				27,
+				25
+			],
+			"b": [
+				27,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_armoury",
+			"a": [
+				36,
+				25
+			],
+			"b": [
+				36,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_records",
+			"a": [
+				46,
+				25
+			],
+			"b": [
+				46,
+				24
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					12.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					16.0,
+					6.5
+				],
+				[
+					16.5,
+					12.5
+				],
+				[
+					27.5,
+					12.5
+				],
+				[
+					27.0,
+					6.5
+				],
+				[
+					27.5,
+					12.5
+				],
+				[
+					40.5,
+					12.5
+				],
+				[
+					40.0,
+					6.5
+				],
+				[
+					40.5,
+					12.5
+				],
+				[
+					49.5,
+					12.5
+				],
+				[
+					49.0,
+					6.5
+				],
+				[
+					49.5,
+					12.5
+				],
+				[
+					51.0,
+					12.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					23.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					17.0,
+					29.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					27.5,
+					23.5
+				],
+				[
+					27.0,
+					29.5
+				],
+				[
+					27.5,
+					23.5
+				],
+				[
+					36.5,
+					23.5
+				],
+				[
+					36.0,
+					29.5
+				],
+				[
+					36.5,
+					23.5
+				],
+				[
+					46.5,
+					23.5
+				],
+				[
+					46.0,
+					29.5
+				],
+				[
+					46.5,
+					23.5
+				],
+				[
+					51.0,
+					23.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					12.5
+				],
+				[
+					18.0,
+					18.0
+				],
+				[
+					22.5,
+					23.5
+				],
+				[
+					25.5,
+					12.5
+				],
+				[
+					29.0,
+					18.0
+				],
+				[
+					32.5,
+					23.5
+				],
+				[
+					35.5,
+					12.5
+				],
+				[
+					39.0,
+					18.0
+				],
+				[
+					42.5,
+					23.5
+				],
+				[
+					45.5,
+					12.5
+				],
+				[
+					48.0,
+					18.0
+				],
+				[
+					50.5,
+					23.5
+				],
+				[
+					50.0,
+					23.5
+				],
+				[
+					14.0,
+					23.5
+				],
+				[
+					14.0,
+					12.5
+				]
+			]
+		}
+	]
+}

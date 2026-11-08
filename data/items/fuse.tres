@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_326s0"]
+
+[resource]
+script = ExtResource("1_326s0")
+id = &"fuse"
+name_key = "ITEM_FUSE"
+description_key = "ITEM_FUSE_DESC"
+category = 3
+icon_glyph = "F"
+color = Color(1, 0.7, 0.2, 1)
+max_stack = 2
+tags = PackedStringArray()

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventData" format=3]
+
+[ext_resource type="Script" path="res://scripts/missions/events/power_failure_event.gd" id="1_7cvcf"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="2_ahf85"]
+
+[resource]
+script = ExtResource("2_ahf85")
+id = &"power_failure"
+name_key = "EVENT_POWER_FAILURE"
+banner_key = "EVENT_POWER_FAILURE_BANNER"
+event_script = ExtResource("1_7cvcf")
+min_threat = 0.25
+cooldown = 150.0
+duration = 35.0

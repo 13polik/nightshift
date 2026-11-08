@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventData" format=3]
+
+[ext_resource type="Script" path="res://scripts/missions/events/system_failure_event.gd" id="1_2o84u"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="2_ec47w"]
+
+[resource]
+script = ExtResource("2_ec47w")
+id = &"system_failure"
+name_key = "EVENT_SYSTEM_FAILURE"
+banner_key = "EVENT_SYSTEM_FAILURE_BANNER"
+event_script = ExtResource("1_2o84u")
+weight = 0.8
+min_threat = 0.2
+cooldown = 140.0
+duration = 60.0

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PerkData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/perk_data.gd" id="1_iu43k"]
+
+[resource]
+script = ExtResource("1_iu43k")
+id = &"marathon"
+name_key = "PERK_MARATHON"
+description_key = "PERK_MARATHON_DESC"
+unlock_level = 6
+icon_glyph = ">"
+stat_multipliers = {
+"noise_sprint": 1.15,
+"stamina_max": 1.3,
+"stamina_regen": 1.1
+}

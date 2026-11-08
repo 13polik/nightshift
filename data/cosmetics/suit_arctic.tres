@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CosmeticData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/cosmetic_data.gd" id="1_cd7i1"]
+
+[resource]
+script = ExtResource("1_cd7i1")
+id = &"suit_arctic"
+name_key = "COS_SUIT_ARCTIC"
+rarity = 3
+source = 4
+store_sku = "cosmetic.suit_arctic"
+primary_color = Color(0.85, 0.9, 0.95, 1)
+secondary_color = Color(0.3, 0.4, 0.5, 1)
+accent_color = Color(1, 1, 1, 1)

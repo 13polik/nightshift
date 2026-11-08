@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_b328r"]
+
+[resource]
+script = ExtResource("1_b328r")
+id = &"crowbar"
+name_key = "ITEM_CROWBAR"
+description_key = "ITEM_CROWBAR_DESC"
+category = 1
+icon_glyph = "/"
+color = Color(0.9, 0.6, 0.1, 1)
+consumed_on_use = false
+tags = PackedStringArray()

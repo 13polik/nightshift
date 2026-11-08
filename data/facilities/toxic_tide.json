@@ -1,0 +1,1054 @@
+{
+	"id": "toxic_tide",
+	"name_key": "LOC_TOXIC_TIDE",
+	"notes": [
+		"NOTE_TOXIC_TIDE_1",
+		"NOTE_TOXIC_TIDE_2",
+		"NOTE_TOXIC_TIDE_3"
+	],
+	"tile_size": 2.0,
+	"levels": {
+		"0": {
+			"y": 0.0,
+			"height": 4.6
+		}
+	},
+	"rooms": [
+		{
+			"id": "corridor_a",
+			"name_key": "ROOM_TOXIC_TIDE_CORRIDOR_A",
+			"level": 0,
+			"rect": [
+				12,
+				12,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "corridor_b",
+			"name_key": "ROOM_TOXIC_TIDE_CORRIDOR_B",
+			"level": 0,
+			"rect": [
+				12,
+				22,
+				40,
+				3
+			],
+			"kind": "corridor",
+			"tags": [
+				"corridor"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			]
+		},
+		{
+			"id": "yard_west",
+			"name_key": "ROOM_TOXIC_TIDE_YARD_WEST",
+			"level": 0,
+			"rect": [
+				2,
+				12,
+				10,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"insertion",
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "spawn_player",
+					"pos": [
+						5.0,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						6.5,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						8.0,
+						18.5
+					]
+				},
+				{
+					"type": "spawn_player",
+					"pos": [
+						9.5,
+						18.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "vehicle",
+					"pos": [
+						4.5,
+						23.4
+					],
+					"face": "e"
+				},
+				{
+					"type": "prop",
+					"kind": "barrier",
+					"pos": [
+						3.0,
+						12.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						2.8,
+						13.5
+					]
+				}
+			]
+		},
+		{
+			"id": "yard_east",
+			"name_key": "ROOM_TOXIC_TIDE_YARD_EAST",
+			"level": 0,
+			"rect": [
+				52,
+				12,
+				8,
+				13
+			],
+			"kind": "outdoor",
+			"outdoor": true,
+			"tags": [
+				"extraction"
+			],
+			"power_zone": "exterior",
+			"features": [
+				{
+					"type": "prop",
+					"kind": "evac_beacon",
+					"pos": [
+						58.5,
+						18.5
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "crate_stack",
+					"pos": [
+						53.5,
+						23.8
+					]
+				},
+				{
+					"type": "prop",
+					"kind": "barrel",
+					"pos": [
+						58.0,
+						12.8
+					]
+				}
+			]
+		},
+		{
+			"id": "gatehouse",
+			"name_key": "ROOM_TOXIC_TIDE_GATEHOUSE",
+			"level": 0,
+			"rect": [
+				12,
+				2,
+				8,
+				10
+			],
+			"kind": "security",
+			"tags": [
+				"plant_security"
+			],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "alarm_panel",
+					"tag": "alarm_panel",
+					"pos": [
+						14.67,
+						2.4
+					],
+					"face": "s"
+				},
+				{
+					"type": "interactable",
+					"kind": "evac_console",
+					"tag": "plant_radio",
+					"pos": [
+						17.33,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "reactor_hall",
+			"name_key": "ROOM_TOXIC_TIDE_REACTOR_HALL",
+			"level": 0,
+			"rect": [
+				20,
+				2,
+				16,
+				10
+			],
+			"kind": "hall",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "leak_valve",
+					"pos": [
+						28.0,
+						2.4
+					],
+					"face": "s"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						28.0,
+						7.0
+					]
+				}
+			]
+		},
+		{
+			"id": "synthesis",
+			"name_key": "ROOM_TOXIC_TIDE_SYNTHESIS",
+			"level": 0,
+			"rect": [
+				36,
+				2,
+				12,
+				10
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "synthesis_terminal",
+					"pos": [
+						42.0,
+						2.4
+					],
+					"face": "s"
+				}
+			]
+		},
+		{
+			"id": "north_extra_1",
+			"name_key": "ROOM_TOXIC_TIDE_NORTH_EXTRA_1",
+			"level": 0,
+			"rect": [
+				48,
+				2,
+				4,
+				10
+			],
+			"kind": "maintenance",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "scrubbers",
+			"name_key": "ROOM_TOXIC_TIDE_SCRUBBERS",
+			"level": 0,
+			"rect": [
+				12,
+				15,
+				12,
+				7
+			],
+			"kind": "pump",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "scrubber_panel",
+					"pos": [
+						12.4,
+						18.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "control",
+			"name_key": "ROOM_TOXIC_TIDE_CONTROL",
+			"level": 0,
+			"rect": [
+				24,
+				15,
+				10,
+				7
+			],
+			"kind": "control",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"medical"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "terminal",
+					"tag": "server_terminal",
+					"pos": [
+						24.4,
+						18.5
+					],
+					"face": "e"
+				}
+			]
+		},
+		{
+			"id": "tank_farm",
+			"name_key": "ROOM_TOXIC_TIDE_TANK_FARM",
+			"level": 0,
+			"rect": [
+				34,
+				15,
+				10,
+				7
+			],
+			"kind": "pump",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"tools",
+				"general"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "electrical_panel",
+					"tag": "leak_valve",
+					"pos": [
+						34.4,
+						18.5
+					],
+					"face": "e"
+				},
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						39.0,
+						18.5
+					]
+				}
+			]
+		},
+		{
+			"id": "middle_extra_1",
+			"name_key": "ROOM_TOXIC_TIDE_MIDDLE_EXTRA_1",
+			"level": 0,
+			"rect": [
+				44,
+				15,
+				8,
+				7
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": []
+		},
+		{
+			"id": "generator_room",
+			"name_key": "ROOM_TOXIC_TIDE_GENERATOR_ROOM",
+			"level": 0,
+			"rect": [
+				12,
+				25,
+				10,
+				9
+			],
+			"kind": "generator",
+			"tags": [],
+			"power_zone": "generator",
+			"loot_tags": [
+				"tools",
+				"component_spawn"
+			],
+			"features": [
+				{
+					"type": "interactable",
+					"kind": "generator",
+					"tag": "generator",
+					"pos": [
+						15.33,
+						31.4
+					],
+					"face": "n"
+				},
+				{
+					"type": "interactable",
+					"kind": "breaker",
+					"tag": "power_breaker",
+					"pos": [
+						18.67,
+						33.6
+					],
+					"face": "n"
+				}
+			]
+		},
+		{
+			"id": "warehouse",
+			"name_key": "ROOM_TOXIC_TIDE_WAREHOUSE",
+			"level": 0,
+			"rect": [
+				22,
+				25,
+				12,
+				9
+			],
+			"kind": "storage",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"tools"
+			],
+			"features": []
+		},
+		{
+			"id": "qa_lab",
+			"name_key": "ROOM_TOXIC_TIDE_QA_LAB",
+			"level": 0,
+			"rect": [
+				34,
+				25,
+				10,
+				9
+			],
+			"kind": "lab",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"component_spawn",
+				"research"
+			],
+			"features": [
+				{
+					"type": "enemy_spawn",
+					"pos": [
+						39.0,
+						29.5
+					]
+				}
+			]
+		},
+		{
+			"id": "locker",
+			"name_key": "ROOM_TOXIC_TIDE_LOCKER",
+			"level": 0,
+			"rect": [
+				44,
+				25,
+				8,
+				9
+			],
+			"kind": "office",
+			"tags": [],
+			"power_zone": "main",
+			"loot_tags": [
+				"general",
+				"keycard_spawn",
+				"research"
+			],
+			"features": []
+		}
+	],
+	"doors": [
+		{
+			"a": [
+				11,
+				12
+			],
+			"b": [
+				12,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				12
+			],
+			"b": [
+				52,
+				12
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				13
+			],
+			"b": [
+				12,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				13
+			],
+			"b": [
+				52,
+				13
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				14
+			],
+			"b": [
+				12,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				14
+			],
+			"b": [
+				52,
+				14
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				22
+			],
+			"b": [
+				12,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				22
+			],
+			"b": [
+				52,
+				22
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				23
+			],
+			"b": [
+				12,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				23
+			],
+			"b": [
+				52,
+				23
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				11,
+				24
+			],
+			"b": [
+				12,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"a": [
+				51,
+				24
+			],
+			"b": [
+				52,
+				24
+			],
+			"type": "open"
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_gatehouse",
+			"a": [
+				16,
+				11
+			],
+			"b": [
+				16,
+				12
+			]
+		},
+		{
+			"type": "heavy",
+			"lockdown": true,
+			"id": "door_reactor_hall",
+			"a": [
+				28,
+				11
+			],
+			"b": [
+				28,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_synthesis",
+			"a": [
+				42,
+				11
+			],
+			"b": [
+				42,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_north_extra_1",
+			"a": [
+				50,
+				11
+			],
+			"b": [
+				50,
+				12
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_scrubbers_n",
+			"a": [
+				13,
+				15
+			],
+			"b": [
+				13,
+				14
+			]
+		},
+		{
+			"id": "door_scrubbers_s",
+			"type": "normal",
+			"a": [
+				22,
+				21
+			],
+			"b": [
+				22,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_control_n",
+			"a": [
+				25,
+				15
+			],
+			"b": [
+				25,
+				14
+			]
+		},
+		{
+			"id": "door_control_s",
+			"type": "normal",
+			"a": [
+				32,
+				21
+			],
+			"b": [
+				32,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_tank_farm_n",
+			"a": [
+				35,
+				15
+			],
+			"b": [
+				35,
+				14
+			]
+		},
+		{
+			"id": "door_tank_farm_s",
+			"type": "normal",
+			"a": [
+				42,
+				21
+			],
+			"b": [
+				42,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"id": "door_middle_extra_1_n",
+			"a": [
+				45,
+				15
+			],
+			"b": [
+				45,
+				14
+			]
+		},
+		{
+			"id": "door_middle_extra_1_s",
+			"type": "normal",
+			"a": [
+				50,
+				21
+			],
+			"b": [
+				50,
+				22
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_generator_room",
+			"a": [
+				17,
+				25
+			],
+			"b": [
+				17,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_warehouse",
+			"a": [
+				28,
+				25
+			],
+			"b": [
+				28,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_qa_lab",
+			"a": [
+				39,
+				25
+			],
+			"b": [
+				39,
+				24
+			]
+		},
+		{
+			"type": "normal",
+			"lockdown": true,
+			"id": "door_locker",
+			"a": [
+				48,
+				25
+			],
+			"b": [
+				48,
+				24
+			]
+		}
+	],
+	"route_locks": {},
+	"patrol_routes": [
+		{
+			"id": "north_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					13.5
+				],
+				[
+					16.5,
+					13.5
+				],
+				[
+					16.0,
+					7.0
+				],
+				[
+					16.5,
+					13.5
+				],
+				[
+					28.5,
+					13.5
+				],
+				[
+					28.0,
+					7.0
+				],
+				[
+					28.5,
+					13.5
+				],
+				[
+					42.5,
+					13.5
+				],
+				[
+					42.0,
+					7.0
+				],
+				[
+					42.5,
+					13.5
+				],
+				[
+					50.5,
+					13.5
+				],
+				[
+					50.0,
+					7.0
+				],
+				[
+					50.5,
+					13.5
+				],
+				[
+					51.0,
+					13.5
+				]
+			]
+		},
+		{
+			"id": "south_sweep",
+			"level": 0,
+			"points": [
+				[
+					13.0,
+					23.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					17.0,
+					29.5
+				],
+				[
+					17.5,
+					23.5
+				],
+				[
+					28.5,
+					23.5
+				],
+				[
+					28.0,
+					29.5
+				],
+				[
+					28.5,
+					23.5
+				],
+				[
+					39.5,
+					23.5
+				],
+				[
+					39.0,
+					29.5
+				],
+				[
+					39.5,
+					23.5
+				],
+				[
+					48.5,
+					23.5
+				],
+				[
+					48.0,
+					29.5
+				],
+				[
+					48.5,
+					23.5
+				],
+				[
+					51.0,
+					23.5
+				]
+			]
+		},
+		{
+			"id": "middle_loop",
+			"level": 0,
+			"points": [
+				[
+					13.5,
+					13.5
+				],
+				[
+					18.0,
+					18.5
+				],
+				[
+					22.5,
+					23.5
+				],
+				[
+					25.5,
+					13.5
+				],
+				[
+					29.0,
+					18.5
+				],
+				[
+					32.5,
+					23.5
+				],
+				[
+					35.5,
+					13.5
+				],
+				[
+					39.0,
+					18.5
+				],
+				[
+					42.5,
+					23.5
+				],
+				[
+					45.5,
+					13.5
+				],
+				[
+					48.0,
+					18.5
+				],
+				[
+					50.5,
+					23.5
+				],
+				[
+					50.0,
+					23.5
+				],
+				[
+					14.0,
+					23.5
+				],
+				[
+					14.0,
+					13.5
+				]
+			]
+		}
+	]
+}

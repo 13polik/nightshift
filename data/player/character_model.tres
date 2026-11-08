@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterModelData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_model_data.gd" id="1_cm"]
+[ext_resource type="PackedScene" path="res://assets/characters/survivor/survivor_visual.tscn" id="2_scene"]
+
+[resource]
+script = ExtResource("1_cm")
+id = &"operative"
+name_key = "COS_SUIT_STANDARD"
+scene = ExtResource("2_scene")
+height = 1.85

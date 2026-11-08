@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PerkData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/perk_data.gd" id="1_1xa7t"]
+
+[resource]
+script = ExtResource("1_1xa7t")
+id = &"long_battery"
+name_key = "PERK_LONG_BATTERY"
+description_key = "PERK_LONG_BATTERY_DESC"
+unlock_level = 4
+icon_glyph = "*"
+stat_multipliers = {
+"flashlight_battery_seconds": 1.4,
+"stamina_max": 0.9
+}

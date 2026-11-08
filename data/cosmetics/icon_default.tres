@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CosmeticData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/cosmetic_data.gd" id="1_hxo7j"]
+
+[resource]
+script = ExtResource("1_hxo7j")
+id = &"icon_default"
+name_key = "COS_ICON_DEFAULT"
+slot = 5
+source = 0
+primary_color = Color(1, 1, 1, 1)
+secondary_color = Color(0.1, 0.11, 0.12, 1)
+accent_color = Color(1, 1, 1, 1)
+icon_glyph = "O"

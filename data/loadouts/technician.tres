@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LoadoutOptionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/loadout_option_data.gd" id="1_nu26e"]
+
+[resource]
+script = ExtResource("1_nu26e")
+id = &"technician"
+name_key = "KIT_TECHNICIAN"
+description_key = "KIT_TECHNICIAN_DESC"
+unlock_level = 3
+items = {
+"crowbar": 1
+}

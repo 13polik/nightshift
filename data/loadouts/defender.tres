@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LoadoutOptionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/loadout_option_data.gd" id="1_2kpms"]
+
+[resource]
+script = ExtResource("1_2kpms")
+id = &"defender"
+name_key = "KIT_DEFENDER"
+description_key = "KIT_DEFENDER_DESC"
+unlock_level = 5
+items = {
+"arc_cell": 1,
+"arc_emitter": 1
+}
